@@ -170,9 +170,7 @@ fi
 # Support legacy account file cache before giving up
 
 if [[ ! -f "${SERVICE_ACCOUNT_FILE}" ]]; then
-    xcwarning "Unable to find service account JSON file: ${SERVICE_ACCOUNT_FILE}"
-        "Please ensure you've followed the steps at:"
-        "https://firebase.google.com/docs/crash/ios#upload_symbol_files"
+    xcwarning "No service account JSON file specified on command line."
 
     xcdebug "Trying to extract JSON file from cache."
 
@@ -213,10 +211,9 @@ if ((VERBOSE >= 2)); then
 fi
 
 # Create and upload symbol files for each architecture
-if [[ -x "${SWIFT_DEMANGLE:=$(xcrun --find swift-demangle 2>/dev/null)}" ]]; then
-    SWIFT_DEMANGLE_COMMAND="${SWIFT_DEMANGLE} -simplified"
-else
-    SWIFT_DEMANGLE_COMMAND=/bin/cat
+
+if [[ ! -x "${SWIFT_DEMANGLE:="$(xcrun --find swift-demangle 2>/dev/null)"}" ]]; then
+    SWIFT_DEMANGLE=/bin/cat
 fi
 
 for ARCH in ${ARCHS?:}; do
@@ -259,7 +256,7 @@ for ARCH in ${ARCHS?:}; do
         exit ${STATUS}
     fi
 
-    ${SWIFT_DEMANGLE_COMMAND} <"${SCRATCH}" >|"${!SYMBOL_FILE}" || exit 1
+    "${SWIFT_DEMANGLE}" <"${SCRATCH}" >|"${!SYMBOL_FILE}" || exit 1
 
     if ((VERBOSE >= 2)); then
         xcnote "${EXECUTABLE##*/} (architecture ${ARCH}) symbol dump follows (first 20 lines):"

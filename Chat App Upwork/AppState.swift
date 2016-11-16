@@ -21,8 +21,24 @@ class AppState: NSObject {
     //var friendID: String?
     //var friend: UserData?
     
-    let appBlueColor = UIColor.init(colorLiteralRed: (22.0/255.0), green: (104.0/255.0), blue: (143.0/255.0), alpha: 1)
+    let appBlueColor = UIColor.init(colorLiteralRed: (22.0/255.0), green: (22.0/255.0), blue: (22.0/255.0), alpha: 1)
     
     var friendReqCount = 0
     var unreadChatCount = 0
 }
+
+let globalGroup = dispatch_group_create();
+let queue = NSOperationQueue()
+
+
+let myUserID = {
+    //return LoggedInUser?.uid
+    return FIRAuth.auth()?.currentUser?.uid
+}()
+
+//Globals
+var myGroups:[Dictionary<String,AnyObject>] = []
+var Users:[Dictionary<String,AnyObject>] = []
+var selectedUser:[Dictionary<String,AnyObject>] = []
+var filteredUser:[Dictionary<String,AnyObject>] = []
+var searchedUser:[Dictionary<String,AnyObject>] = []

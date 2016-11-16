@@ -43,31 +43,31 @@ FOUNDATION_EXPORT NSString * __nonnull const FIRMessagingMessagesDeletedNotifica
  *  @enum FIRMessagingError
  */
 typedef NS_ENUM(NSUInteger, FIRMessagingError) {
-  /// Unknown error.
+  // Unknown error.
   FIRMessagingErrorUnknown = 0,
 
-  /// FIRMessaging couldn't validate request from this client.
+  // Auth Error -- FIRMessaging couldn't validate request from this client.
   FIRMessagingErrorAuthentication = 1,
 
-  /// InstanceID service cannot be accessed.
+  // NoAccess -- InstanceID service cannot be accessed.
   FIRMessagingErrorNoAccess = 2,
 
-  /// Request to InstanceID backend timed out.
+  // Timeout -- Request to InstanceID backend timed out.
   FIRMessagingErrorTimeout = 3,
 
-  /// No network available to reach the servers.
+  // Network -- No network available to reach the servers.
   FIRMessagingErrorNetwork = 4,
 
-  /// Another similar operation in progress, bailing this one.
+  // OperationInProgress -- Another similar operation in progress,
+  // bailing this one.
   FIRMessagingErrorOperationInProgress = 5,
 
-  /// Some parameters of the request were invalid.
+  // InvalidRequest -- Some parameters of the request were invalid.
   FIRMessagingErrorInvalidRequest = 7,
 };
 
 /// Status for the downstream message received by the app.
 typedef NS_ENUM(NSInteger, FIRMessagingMessageStatus) {
-  /// Unknown status.
   FIRMessagingMessageStatusUnknown,
   /// New downstream message received by the app.
   FIRMessagingMessageStatusNew,
@@ -76,7 +76,6 @@ typedef NS_ENUM(NSInteger, FIRMessagingMessageStatus) {
 /// Information about a downstream message received by the app.
 @interface FIRMessagingMessageInfo : NSObject
 
-/// The status of the downstream message
 @property(nonatomic, readonly, assign) FIRMessagingMessageStatus status;
 
 @end
@@ -122,7 +121,7 @@ typedef NS_ENUM(NSInteger, FIRMessagingMessageStatus) {
  *  In order to receive FIRMessaging messages, declare application:didReceiveRemoteNotification:
  *
  *  Client apps can send upstream messages back to the app server using the XMPP-based
- *  <a href="https://developers.google.com/cloud-messaging/ccs.html">Cloud Connection Server</a>
+ *  <a href="http://developers.google.com/cloud-messaging/ccs.html">Cloud Connection Server</a>,
  *
  */
 @interface FIRMessaging : NSObject

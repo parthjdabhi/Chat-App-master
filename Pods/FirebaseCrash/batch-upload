@@ -158,15 +158,11 @@ extract_symbols_and_upload () {
 
     [[ "${EXECUTABLE}" ]] || return 1
 
-    if [[ -x "${SWIFT_DEMANGLE:=$(xcrun --find swift-demangle 2>/dev/null)}" ]];
-    then
-        SWIFT_DEMANGLE_COMMAND="${SWIFT_DEMANGLE} -simplified"
-    else
-        SWIFT_DEMANGLE_COMMAND=/bin/cat
-    fi
+    : "${SWIFT_DEMANGLE:="$(xcrun --find swift-demangle 2>/dev/null | head -n1)"}"
+
     fcr_mktemp SYMBOL_FILE
 
-    "${DUMP_SYMS:="$(script_dir)/dump_syms"}" -a "${ARCH}" ${DWARF_COMPANION:+-g "${DWARF_COMPANION}"} "${EXECUTABLE}" | ${SWIFT_DEMANGLE_COMMAND} >|"${SYMBOL_FILE}" || return $?
+    "${DUMP_SYMS:="$(script_dir)/dump_syms"}" -a "${ARCH}" ${DWARF_COMPANION:+-g "${DWARF_COMPANION}"} "${EXECUTABLE}" | "${SWIFT_DEMANGLE:=cat}" >|"${SYMBOL_FILE}" || return $?
 
     fcr_upload_files "${SYMBOL_FILE}" || return $?
 }

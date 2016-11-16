@@ -30,7 +30,7 @@
 @interface JSQMessage : NSObject <JSQMessageData, NSCoding, NSCopying>
 
 /**
- *  Returns the string identifier that uniquely identifies the user who sent the message. 
+ *  Returns the string identifier that uniquely identifies the user who sent the message.
  */
 @property (copy, nonatomic, readonly) NSString *senderId;
 
@@ -63,6 +63,7 @@
  */
 @property (copy, nonatomic, readonly) id<JSQMessageMediaData> media;
 
+@property (copy, nonatomic) NSString *key;
 
 #pragma mark - Initialization
 

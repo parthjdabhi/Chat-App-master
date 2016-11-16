@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28E91DDC618800353E25 /* SearchResultsController.swift */; };
+		5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */; };
+		5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EF1DDC848A00353E25 /* PDExtention.swift */; };
 		9E5AD6FFC20EDDE585CAC281 /* Pods_Chat_App_Upwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88917C2F5746EBC4555E4EF /* Pods_Chat_App_Upwork.framework */; };
 		DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */; };
 		DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB421DC1C92E000C03E1 /* ViewController.swift */; };
@@ -56,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		414B96FFE0EF17337E6BC91D /* Pods-Chat App Upwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat App Upwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork.debug.xcconfig"; sourceTree = "<group>"; };
+		5E1A28E91DDC618800353E25 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		5E1A28EF1DDC848A00353E25 /* PDExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDExtention.swift; sourceTree = "<group>"; };
 		D489C5BA672A0DF87F2924F4 /* Pods-Chat App Upwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat App Upwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork.release.xcconfig"; sourceTree = "<group>"; };
 		DA11CB3D1DC1C92E000C03E1 /* Chat App Upwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat App Upwork.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 				DA73357B1DDBA71A003FC7C8 /* Constants.swift */,
 				DA11CB811DC1D378000C03E1 /* Helper.swift */,
 				DA92C1121DC42B8100259E53 /* AppState.swift */,
+				5E1A28EF1DDC848A00353E25 /* PDExtention.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -224,6 +231,8 @@
 		DA7335681DDBA35C003FC7C8 /* Messaging & Friends */ = {
 			isa = PBXGroup;
 			children = (
+				5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */,
+				5E1A28E91DDC618800353E25 /* SearchResultsController.swift */,
 				DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */,
 				DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */,
 				DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */,
@@ -410,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -424,12 +433,14 @@
 				DA7335751DDBA369003FC7C8 /* RecentTableViewCell.swift in Sources */,
 				DA7335781DDBA369003FC7C8 /* FriendListViewController.swift in Sources */,
 				DA11CB761DC1CC00000C03E1 /* RegisterViewController.swift in Sources */,
+				5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */,
 				DA7335741DDBA369003FC7C8 /* UserTableViewCell.swift in Sources */,
 				DA7335771DDBA369003FC7C8 /* RecentChatViewController.swift in Sources */,
 				DA7335761DDBA369003FC7C8 /* PrivateChatViewController.swift in Sources */,
 				DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */,
 				DA11CB781DC1D088000C03E1 /* MainViewController.swift in Sources */,
 				DA92C1111DC422DF00259E53 /* GroupViewController.swift in Sources */,
+				5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */,
 				DA11CB491DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld in Sources */,
 				DA73357C1DDBA71A003FC7C8 /* Constants.swift in Sources */,
 				DA7335721DDBA369003FC7C8 /* FriendReqTableViewCell.swift in Sources */,
@@ -437,6 +448,7 @@
 				DA11CB821DC1D378000C03E1 /* Helper.swift in Sources */,
 				DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */,
 				DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */,
+				5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */,
 				DA11CB801DC1D334000C03E1 /* CommonUtils.swift in Sources */,
 				DA11CB7C1DC1D2CF000C03E1 /* MBProgressHUD.m in Sources */,
 				DA73357A1DDBA369003FC7C8 /* ChatViewController.swift in Sources */,
@@ -591,7 +603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-Upwork";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Chat App Upwork/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -607,7 +619,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-Upwork";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Chat App Upwork/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Bridging-Header.h";
 			};
 			name = Release;
 		};

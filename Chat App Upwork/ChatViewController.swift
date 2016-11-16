@@ -17,7 +17,7 @@ class ChatViewController: JSQMessagesViewController {
     
     // MARK: Properties
     var city: String!
-    var cityNodeName = "caht_"
+    var cityNodeName = "Chat_"
     let myUserID = FIRAuth.auth()?.currentUser?.uid
     
     let rootRef = FIRDatabase.database().reference()

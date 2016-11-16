@@ -87,7 +87,7 @@ class FriendReqViewController: UIViewController,FriendReqTableViewCellDelegate {
     // MARK: - Delegates
     // MARK: -  UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let allFriendReqReference = self.FriendReqReference?.allKeys.count ?? 0
+        //let allFriendReqReference = self.FriendReqReference?.allKeys.count ?? 0
         if arrFriendReq.count == 0 {
             let emptyLabel = UILabel(frame: tableView.frame)
             emptyLabel.text = "Currently you not have any pending requests!"
