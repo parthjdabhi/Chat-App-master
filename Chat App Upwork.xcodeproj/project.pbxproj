@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E5AD6FFC20EDDE585CAC281 /* Pods_Chat_App_Upwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88917C2F5746EBC4555E4EF /* Pods_Chat_App_Upwork.framework */; };
+		DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */; };
+		DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB421DC1C92E000C03E1 /* ViewController.swift */; };
+		DA11CB461DC1C92E000C03E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11CB441DC1C92E000C03E1 /* Main.storyboard */; };
+		DA11CB491DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB471DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld */; };
+		DA11CB4B1DC1C92E000C03E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA11CB4A1DC1C92E000C03E1 /* Assets.xcassets */; };
+		DA11CB4E1DC1C92E000C03E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11CB4C1DC1C92E000C03E1 /* LaunchScreen.storyboard */; };
+		DA11CB591DC1C92E000C03E1 /* Chat_App_UpworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB581DC1C92E000C03E1 /* Chat_App_UpworkTests.swift */; };
+		DA11CB641DC1C92E000C03E1 /* Chat_App_UpworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB631DC1C92E000C03E1 /* Chat_App_UpworkUITests.swift */; };
+		DA11CB721DC1CB5B000C03E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA11CB711DC1CB5B000C03E1 /* GoogleService-Info.plist */; };
+		DA11CB741DC1CBF4000C03E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB731DC1CBF4000C03E1 /* LoginViewController.swift */; };
+		DA11CB761DC1CC00000C03E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB751DC1CC00000C03E1 /* RegisterViewController.swift */; };
+		DA11CB781DC1D088000C03E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB771DC1D088000C03E1 /* MainViewController.swift */; };
+		DA11CB7C1DC1D2CF000C03E1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB7B1DC1D2CF000C03E1 /* MBProgressHUD.m */; };
+		DA11CB801DC1D334000C03E1 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB7F1DC1D334000C03E1 /* CommonUtils.swift */; };
+		DA11CB821DC1D378000C03E1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB811DC1D378000C03E1 /* Helper.swift */; };
+		DA7335721DDBA369003FC7C8 /* FriendReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */; };
+		DA7335731DDBA369003FC7C8 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */; };
+		DA7335741DDBA369003FC7C8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */; };
+		DA7335751DDBA369003FC7C8 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356C1DDBA369003FC7C8 /* RecentTableViewCell.swift */; };
+		DA7335761DDBA369003FC7C8 /* PrivateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */; };
+		DA7335771DDBA369003FC7C8 /* RecentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */; };
+		DA7335781DDBA369003FC7C8 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */; };
+		DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */; };
+		DA73357A1DDBA369003FC7C8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7335711DDBA369003FC7C8 /* ChatViewController.swift */; };
+		DA73357C1DDBA71A003FC7C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73357B1DDBA71A003FC7C8 /* Constants.swift */; };
+		DA92C1111DC422DF00259E53 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA92C1101DC422DF00259E53 /* GroupViewController.swift */; };
+		DA92C1131DC42B8100259E53 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA92C1121DC42B8100259E53 /* AppState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA11CB551DC1C92E000C03E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA11CB351DC1C92E000C03E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA11CB3C1DC1C92E000C03E1;
+			remoteInfo = "Chat App Upwork";
+		};
+		DA11CB601DC1C92E000C03E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA11CB351DC1C92E000C03E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA11CB3C1DC1C92E000C03E1;
+			remoteInfo = "Chat App Upwork";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		414B96FFE0EF17337E6BC91D /* Pods-Chat App Upwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat App Upwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork.debug.xcconfig"; sourceTree = "<group>"; };
+		D489C5BA672A0DF87F2924F4 /* Pods-Chat App Upwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat App Upwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork.release.xcconfig"; sourceTree = "<group>"; };
+		DA11CB3D1DC1C92E000C03E1 /* Chat App Upwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat App Upwork.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA11CB421DC1C92E000C03E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA11CB451DC1C92E000C03E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA11CB481DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat_App_Upwork.xcdatamodel; sourceTree = "<group>"; };
+		DA11CB4A1DC1C92E000C03E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA11CB4D1DC1C92E000C03E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA11CB4F1DC1C92E000C03E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA11CB541DC1C92E000C03E1 /* Chat App UpworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat App UpworkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA11CB581DC1C92E000C03E1 /* Chat_App_UpworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_UpworkTests.swift; sourceTree = "<group>"; };
+		DA11CB5A1DC1C92E000C03E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA11CB5F1DC1C92E000C03E1 /* Chat App UpworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat App UpworkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA11CB631DC1C92E000C03E1 /* Chat_App_UpworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_UpworkUITests.swift; sourceTree = "<group>"; };
+		DA11CB651DC1C92E000C03E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA11CB711DC1CB5B000C03E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA11CB731DC1CBF4000C03E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DA11CB751DC1CC00000C03E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		DA11CB771DC1D088000C03E1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DA11CB7A1DC1D2CF000C03E1 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DA11CB7B1DC1D2CF000C03E1 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DA11CB7E1DC1D2F5000C03E1 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		DA11CB7F1DC1D334000C03E1 /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		DA11CB811DC1D378000C03E1 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendReqTableViewCell.swift; sourceTree = "<group>"; };
+		DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
+		DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		DA73356C1DDBA369003FC7C8 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateChatViewController.swift; sourceTree = "<group>"; };
+		DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewController.swift; sourceTree = "<group>"; };
+		DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityChatViewController.swift; sourceTree = "<group>"; };
+		DA7335711DDBA369003FC7C8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DA73357B1DDBA71A003FC7C8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA92C1101DC422DF00259E53 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		DA92C1121DC42B8100259E53 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F88917C2F5746EBC4555E4EF /* Pods_Chat_App_Upwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat_App_Upwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA11CB3A1DC1C92E000C03E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E5AD6FFC20EDDE585CAC281 /* Pods_Chat_App_Upwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA11CB511DC1C92E000C03E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA11CB5C1DC1C92E000C03E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B07D14CE584F11B3444F6E7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				414B96FFE0EF17337E6BC91D /* Pods-Chat App Upwork.debug.xcconfig */,
+				D489C5BA672A0DF87F2924F4 /* Pods-Chat App Upwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B30BA6233F8922093BBDDA88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F88917C2F5746EBC4555E4EF /* Pods_Chat_App_Upwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA11CB341DC1C92E000C03E1 = {
+			isa = PBXGroup;
+			children = (
+				DA11CB7E1DC1D2F5000C03E1 /* Bridging-Header.h */,
+				DA11CB3F1DC1C92E000C03E1 /* Chat App Upwork */,
+				DA11CB571DC1C92E000C03E1 /* Chat App UpworkTests */,
+				DA11CB621DC1C92E000C03E1 /* Chat App UpworkUITests */,
+				DA11CB3E1DC1C92E000C03E1 /* Products */,
+				B07D14CE584F11B3444F6E7D /* Pods */,
+				B30BA6233F8922093BBDDA88 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA11CB3E1DC1C92E000C03E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA11CB3D1DC1C92E000C03E1 /* Chat App Upwork.app */,
+				DA11CB541DC1C92E000C03E1 /* Chat App UpworkTests.xctest */,
+				DA11CB5F1DC1C92E000C03E1 /* Chat App UpworkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA11CB3F1DC1C92E000C03E1 /* Chat App Upwork */ = {
+			isa = PBXGroup;
+			children = (
+				DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */,
+				DA11CB421DC1C92E000C03E1 /* ViewController.swift */,
+				DA11CB731DC1CBF4000C03E1 /* LoginViewController.swift */,
+				DA11CB751DC1CC00000C03E1 /* RegisterViewController.swift */,
+				DA11CB771DC1D088000C03E1 /* MainViewController.swift */,
+				DA92C1101DC422DF00259E53 /* GroupViewController.swift */,
+				DA7335681DDBA35C003FC7C8 /* Messaging & Friends */,
+				DA11CB791DC1D2B1000C03E1 /* Helper Files */,
+				DA11CB4A1DC1C92E000C03E1 /* Assets.xcassets */,
+				DA11CB441DC1C92E000C03E1 /* Main.storyboard */,
+				DA11CB4C1DC1C92E000C03E1 /* LaunchScreen.storyboard */,
+				DA11CB4F1DC1C92E000C03E1 /* Info.plist */,
+				DA11CB471DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld */,
+				DA11CB711DC1CB5B000C03E1 /* GoogleService-Info.plist */,
+			);
+			path = "Chat App Upwork";
+			sourceTree = "<group>";
+		};
+		DA11CB571DC1C92E000C03E1 /* Chat App UpworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA11CB581DC1C92E000C03E1 /* Chat_App_UpworkTests.swift */,
+				DA11CB5A1DC1C92E000C03E1 /* Info.plist */,
+			);
+			path = "Chat App UpworkTests";
+			sourceTree = "<group>";
+		};
+		DA11CB621DC1C92E000C03E1 /* Chat App UpworkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA11CB631DC1C92E000C03E1 /* Chat_App_UpworkUITests.swift */,
+				DA11CB651DC1C92E000C03E1 /* Info.plist */,
+			);
+			path = "Chat App UpworkUITests";
+			sourceTree = "<group>";
+		};
+		DA11CB791DC1D2B1000C03E1 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA11CB7D1DC1D2DD000C03E1 /* MBProgressHUD-master */,
+				DA11CB7F1DC1D334000C03E1 /* CommonUtils.swift */,
+				DA73357B1DDBA71A003FC7C8 /* Constants.swift */,
+				DA11CB811DC1D378000C03E1 /* Helper.swift */,
+				DA92C1121DC42B8100259E53 /* AppState.swift */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
+		DA11CB7D1DC1D2DD000C03E1 /* MBProgressHUD-master */ = {
+			isa = PBXGroup;
+			children = (
+				DA11CB7A1DC1D2CF000C03E1 /* MBProgressHUD.h */,
+				DA11CB7B1DC1D2CF000C03E1 /* MBProgressHUD.m */,
+			);
+			name = "MBProgressHUD-master";
+			sourceTree = "<group>";
+		};
+		DA7335681DDBA35C003FC7C8 /* Messaging & Friends */ = {
+			isa = PBXGroup;
+			children = (
+				DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */,
+				DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */,
+				DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */,
+				DA73356C1DDBA369003FC7C8 /* RecentTableViewCell.swift */,
+				DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */,
+				DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */,
+				DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */,
+				DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */,
+				DA7335711DDBA369003FC7C8 /* ChatViewController.swift */,
+			);
+			name = "Messaging & Friends";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA11CB3C1DC1C92E000C03E1 /* Chat App Upwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA11CB681DC1C92E000C03E1 /* Build configuration list for PBXNativeTarget "Chat App Upwork" */;
+			buildPhases = (
+				EB63FAE4BFA9C192DE835BEB /* [CP] Check Pods Manifest.lock */,
+				DA11CB391DC1C92E000C03E1 /* Sources */,
+				DA11CB3A1DC1C92E000C03E1 /* Frameworks */,
+				DA11CB3B1DC1C92E000C03E1 /* Resources */,
+				9340F275603A7BC9BE660EE0 /* [CP] Embed Pods Frameworks */,
+				A378EF92BFA00B2BB2AEC52F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chat App Upwork";
+			productName = "Chat App Upwork";
+			productReference = DA11CB3D1DC1C92E000C03E1 /* Chat App Upwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA11CB531DC1C92E000C03E1 /* Chat App UpworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA11CB6B1DC1C92E000C03E1 /* Build configuration list for PBXNativeTarget "Chat App UpworkTests" */;
+			buildPhases = (
+				DA11CB501DC1C92E000C03E1 /* Sources */,
+				DA11CB511DC1C92E000C03E1 /* Frameworks */,
+				DA11CB521DC1C92E000C03E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA11CB561DC1C92E000C03E1 /* PBXTargetDependency */,
+			);
+			name = "Chat App UpworkTests";
+			productName = "Chat App UpworkTests";
+			productReference = DA11CB541DC1C92E000C03E1 /* Chat App UpworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA11CB5E1DC1C92E000C03E1 /* Chat App UpworkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA11CB6E1DC1C92E000C03E1 /* Build configuration list for PBXNativeTarget "Chat App UpworkUITests" */;
+			buildPhases = (
+				DA11CB5B1DC1C92E000C03E1 /* Sources */,
+				DA11CB5C1DC1C92E000C03E1 /* Frameworks */,
+				DA11CB5D1DC1C92E000C03E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA11CB611DC1C92E000C03E1 /* PBXTargetDependency */,
+			);
+			name = "Chat App UpworkUITests";
+			productName = "Chat App UpworkUITests";
+			productReference = DA11CB5F1DC1C92E000C03E1 /* Chat App UpworkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA11CB351DC1C92E000C03E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Harloch;
+				TargetAttributes = {
+					DA11CB3C1DC1C92E000C03E1 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					DA11CB531DC1C92E000C03E1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DA11CB3C1DC1C92E000C03E1;
+					};
+					DA11CB5E1DC1C92E000C03E1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DA11CB3C1DC1C92E000C03E1;
+					};
+				};
+			};
+			buildConfigurationList = DA11CB381DC1C92E000C03E1 /* Build configuration list for PBXProject "Chat App Upwork" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA11CB341DC1C92E000C03E1;
+			productRefGroup = DA11CB3E1DC1C92E000C03E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA11CB3C1DC1C92E000C03E1 /* Chat App Upwork */,
+				DA11CB531DC1C92E000C03E1 /* Chat App UpworkTests */,
+				DA11CB5E1DC1C92E000C03E1 /* Chat App UpworkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA11CB3B1DC1C92E000C03E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11CB4E1DC1C92E000C03E1 /* LaunchScreen.storyboard in Resources */,
+				DA11CB721DC1CB5B000C03E1 /* GoogleService-Info.plist in Resources */,
+				DA11CB4B1DC1C92E000C03E1 /* Assets.xcassets in Resources */,
+				DA11CB461DC1C92E000C03E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA11CB521DC1C92E000C03E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA11CB5D1DC1C92E000C03E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9340F275603A7BC9BE660EE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A378EF92BFA00B2BB2AEC52F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB63FAE4BFA9C192DE835BEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA11CB391DC1C92E000C03E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11CB741DC1CBF4000C03E1 /* LoginViewController.swift in Sources */,
+				DA7335751DDBA369003FC7C8 /* RecentTableViewCell.swift in Sources */,
+				DA7335781DDBA369003FC7C8 /* FriendListViewController.swift in Sources */,
+				DA11CB761DC1CC00000C03E1 /* RegisterViewController.swift in Sources */,
+				DA7335741DDBA369003FC7C8 /* UserTableViewCell.swift in Sources */,
+				DA7335771DDBA369003FC7C8 /* RecentChatViewController.swift in Sources */,
+				DA7335761DDBA369003FC7C8 /* PrivateChatViewController.swift in Sources */,
+				DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */,
+				DA11CB781DC1D088000C03E1 /* MainViewController.swift in Sources */,
+				DA92C1111DC422DF00259E53 /* GroupViewController.swift in Sources */,
+				DA11CB491DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld in Sources */,
+				DA73357C1DDBA71A003FC7C8 /* Constants.swift in Sources */,
+				DA7335721DDBA369003FC7C8 /* FriendReqTableViewCell.swift in Sources */,
+				DA92C1131DC42B8100259E53 /* AppState.swift in Sources */,
+				DA11CB821DC1D378000C03E1 /* Helper.swift in Sources */,
+				DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */,
+				DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */,
+				DA11CB801DC1D334000C03E1 /* CommonUtils.swift in Sources */,
+				DA11CB7C1DC1D2CF000C03E1 /* MBProgressHUD.m in Sources */,
+				DA73357A1DDBA369003FC7C8 /* ChatViewController.swift in Sources */,
+				DA7335731DDBA369003FC7C8 /* FriendRequestViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA11CB501DC1C92E000C03E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11CB591DC1C92E000C03E1 /* Chat_App_UpworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA11CB5B1DC1C92E000C03E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11CB641DC1C92E000C03E1 /* Chat_App_UpworkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA11CB561DC1C92E000C03E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA11CB3C1DC1C92E000C03E1 /* Chat App Upwork */;
+			targetProxy = DA11CB551DC1C92E000C03E1 /* PBXContainerItemProxy */;
+		};
+		DA11CB611DC1C92E000C03E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA11CB3C1DC1C92E000C03E1 /* Chat App Upwork */;
+			targetProxy = DA11CB601DC1C92E000C03E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA11CB441DC1C92E000C03E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11CB451DC1C92E000C03E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA11CB4C1DC1C92E000C03E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11CB4D1DC1C92E000C03E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA11CB661DC1C92E000C03E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA11CB671DC1C92E000C03E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA11CB691DC1C92E000C03E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414B96FFE0EF17337E6BC91D /* Pods-Chat App Upwork.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Chat App Upwork/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-Upwork";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Chat App Upwork/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA11CB6A1DC1C92E000C03E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D489C5BA672A0DF87F2924F4 /* Pods-Chat App Upwork.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Chat App Upwork/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-Upwork";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Chat App Upwork/Bridging-Header.h";
+			};
+			name = Release;
+		};
+		DA11CB6C1DC1C92E000C03E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Chat App UpworkTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-UpworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chat App Upwork.app/Chat App Upwork";
+			};
+			name = Debug;
+		};
+		DA11CB6D1DC1C92E000C03E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Chat App UpworkTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-UpworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chat App Upwork.app/Chat App Upwork";
+			};
+			name = Release;
+		};
+		DA11CB6F1DC1C92E000C03E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Chat App UpworkUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-UpworkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Chat App Upwork";
+			};
+			name = Debug;
+		};
+		DA11CB701DC1C92E000C03E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Chat App UpworkUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harloch.Chat-App-UpworkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Chat App Upwork";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA11CB381DC1C92E000C03E1 /* Build configuration list for PBXProject "Chat App Upwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11CB661DC1C92E000C03E1 /* Debug */,
+				DA11CB671DC1C92E000C03E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA11CB681DC1C92E000C03E1 /* Build configuration list for PBXNativeTarget "Chat App Upwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11CB691DC1C92E000C03E1 /* Debug */,
+				DA11CB6A1DC1C92E000C03E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA11CB6B1DC1C92E000C03E1 /* Build configuration list for PBXNativeTarget "Chat App UpworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11CB6C1DC1C92E000C03E1 /* Debug */,
+				DA11CB6D1DC1C92E000C03E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA11CB6E1DC1C92E000C03E1 /* Build configuration list for PBXNativeTarget "Chat App UpworkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11CB6F1DC1C92E000C03E1 /* Debug */,
+				DA11CB701DC1C92E000C03E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA11CB471DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA11CB481DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodel */,
+			);
+			currentVersion = DA11CB481DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodel */;
+			path = Chat_App_Upwork.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DA11CB351DC1C92E000C03E1 /* Project object */;
+}
