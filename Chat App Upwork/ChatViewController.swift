@@ -16,8 +16,7 @@ import Alamofire
 class ChatViewController: JSQMessagesViewController {
     
     // MARK: Properties
-    var city: String!
-    var cityNodeName = "Chat_"
+    var groupID: String!
     let myUserID = FIRAuth.auth()?.currentUser?.uid
     
     let rootRef = FIRDatabase.database().reference()
@@ -47,8 +46,7 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cityNodeName = "Chat_\(self.city)"
-        messageRef = rootRef.child(cityNodeName)
+        messageRef = rootRef.child("groupchat").child(groupID)
         
         self.inputToolbar.contentView.leftBarButtonItem = nil
         self.topContentAdditionalInset = 44
@@ -159,13 +157,13 @@ class ChatViewController: JSQMessagesViewController {
                 CommonUtils.sharedUtils.showProgress(self.view, label: "Blocking User..")
                 /// Add Block users entry
                 //let ref: FIRDatabaseReference = FIRDatabase.database().reference().child(cityNodeName).child("\(cityNodeName)_blockedUser")
-                let ref: FIRDatabaseReference = FIRDatabase.database().reference().child("\(cityNodeName)_blockedUser")
+                let ref: FIRDatabaseReference = FIRDatabase.database().reference().child("blocked").child("\(groupID)_blockedUser")
                 //let friendRequestRef = ref.childByAutoId()
                 //friendRequestRef.setValue(myUserID)
                 ref.child(message.senderId!).setValue("1")
                 
                 //Remove That message
-                FIRDatabase.database().reference().child(cityNodeName).child(message.key).removeValue()
+                //FIRDatabase.database().reference().child(cityNodeName).child(message.key).removeValue()
                 
                 self.messages.removeObject(message)
                 
@@ -286,10 +284,10 @@ class ChatViewController: JSQMessagesViewController {
                     email = userInfo["email"] as? String ?? ""
                 }
                 
-                let message = "Message Id : \(message.key) \n Message Text: \(message.text) Email  : \(email) \nSent By : \(message.senderId) \nBlock Requset Sent by : \(self.myUserID ?? "") \n Reported on \(NSDate.init()) for group chat for \(self.city) city"
+                let message = "Message Id : \(message.key) \n Message Text: \(message.text) Email  : \(email) \nSent By : \(message.senderId) \nBlock Requset Sent by : \(self.myUserID ?? "") \n Reported on \(NSDate.init()) for group chat"
                 //let message = "message Id : \(self.groupId ?? "") \n Message Text: \(text) Email  : \(email) (\(name)) \nSent By : \(self.senderId) on \(date) \nBlock Requset Sent by : \(FIRAuth.auth()?.currentUser?.uid ?? "") \n Reported on \(NSDate.init()) for personal chat"
                 
-                Alamofire.request(.GET, "http://trainersmatchapp.com/poketrainerapp/api/reportUser.php", parameters: ["from": email ,"subject":"Request to block user in group chat for \(self.city) city","message":message])
+                Alamofire.request(.GET, "http://trainersmatchapp.com/poketrainerapp/api/reportUser.php", parameters: ["from": email ,"subject":"Request to block user in group chat","message":message])
                     .responseJSON { response in
                         debugPrint(response.result.value)
                         var msg = ""
@@ -434,7 +432,8 @@ class ChatViewController: JSQMessagesViewController {
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        
+        return nil
+        /*
         let message = messages[indexPath.item]
         
         if message.senderId == senderId {
@@ -445,6 +444,7 @@ class ChatViewController: JSQMessagesViewController {
             var jsqAvtarImg = JSQMessagesAvatarImage.avatarWithImage(UIImage(named: "POKE-TRAINER-LOGO.png"))
             return jsqAvtarImg
         }
+        */
     }
     
     

@@ -15,6 +15,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var username: UILabel!
     @IBOutlet var tblGroupList: UITableView!
     
+    @IBOutlet var lblFriendReqBadge: UILabel!
+    @IBOutlet var lblUnreadConBadge: UILabel!
+    
     var ref:FIRDatabaseReference!
     var user: FIRUser!
     
@@ -48,15 +51,37 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print("handle Logout action...")
             
             try! FIRAuth.auth()?.signOut()
+            AppState.sharedInstance.signedIn = false
+            
+            let next = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController!
+            self.navigationController?.pushViewController(next, animated: true)
         }))
-        let next = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController!
-        self.navigationController?.pushViewController(next, animated: true)
+        
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func actionAddFriends(sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AddContactsViewController") as! AddContactsViewController!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func actionMyFriendRequest(sender: AnyObject) {
+        //InboxViewController
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("InboxViewController") as! InboxViewController!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func actionRecentChat(sender: AnyObject) {
     }
     
     @IBAction func networkButton(sender: AnyObject) {
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("GroupViewController") as! GroupViewController!
         self.navigationController?.pushViewController(next, animated: true)
     }
+    
+    
+    
     
     
     // Perform the search.
@@ -133,6 +158,105 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func updateFriendRequestsCount() {
+        
+        if AppState.friendReqCount != 0 {
+            self.lblFriendReqBadge.text = String(format: "%d",AppState.friendReqCount)
+            self.lblFriendReqBadge.hidden = false
+        } else {
+            self.lblFriendReqBadge.hidden = true
+        }
+        
+        let userId = FIRAuth.auth()?.currentUser?.uid
+        let ref = self.ref.child("users").child(userId!).child("friendRequests")
+        
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            
+            AppState.friendReqCount = snapshot.children.allObjects.count
+            if AppState.friendReqCount != 0 {
+                self.lblFriendReqBadge.text = String(format: "%d",AppState.friendReqCount)
+                self.lblFriendReqBadge.hidden = false
+            } else {
+                self.lblFriendReqBadge.hidden = true
+            }
+            
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
+    }
+    
+    
+    func updateUnreadRecentChatsCount() {
+        
+        let firstGroup = dispatch_group_create()
+        var recents: [AnyObject] = []
+        var recentIds: [AnyObject] = []
+        var unreadConversionCount = 0
+        var unreadMsgCount = 0
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid ?? ""
+        let firebase: FIRDatabaseReference = FIRDatabase.database().referenceWithPath(FRECENT_PATH)
+        dispatch_group_enter(firstGroup)
+        firebase.queryOrderedByChild(FRECENT_USERID).queryEqualToValue(userID).observeSingleEventOfType(.Value, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
+            if snapshot.exists() {
+                recents.removeAll()
+                //Sort array by dict[FRECENT_UPDATEDAT]
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? FIRDataSnapshot {
+                    print(rest.value)
+                    if let dic = rest.value as? [String:AnyObject] {
+                        print("Conversation : \(dic)")
+                        recents.append(dic)
+                        recentIds.append(dic[FRECENT_GROUPID] as? String ?? "")
+                        
+                        let GroupId = dic[FRECENT_GROUPID] as? String ?? ""
+                        let firebase2: FIRDatabaseReference = FIRDatabase.database().referenceWithPath(FMESSAGE_PATH).child(GroupId)
+                        
+                        
+                        let OppUserId = dic[FRECENT_OPPUSERID] as? String ?? ""
+                        dispatch_group_enter(firstGroup)
+                        
+                        firebase2.queryOrderedByChild(FMESSAGE_STATUS).queryEqualToValue(TEXT_DELIVERED).observeSingleEventOfType(.Value, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
+                            if snapshot.exists() {
+                                print(snapshot.childrenCount)
+                                let enumerator = snapshot.children
+                                var UnreadMsgCount = 0
+                                while let rest = enumerator.nextObject() as? FIRDataSnapshot {
+                                    print("rest.key =>>  \(rest.key) =>>   \(rest.value)")
+                                    if var dic = rest.value as? [String:AnyObject] where (dic[FRECENT_USERID] as? String ?? "") ==  OppUserId {
+                                        print(rest.key)
+                                        print("Conversation : \(dic)")
+                                        UnreadMsgCount += 1
+                                    }
+                                }
+                                if UnreadMsgCount != 0 {
+                                    unreadConversionCount += 1
+                                    unreadMsgCount += UnreadMsgCount
+                                }
+                            }
+                            dispatch_group_leave(firstGroup)
+                        })
+                    }
+                }
+            }
+            dispatch_group_leave(firstGroup)
+            //createRecentObservers
+        })
+        
+        
+        dispatch_group_notify(firstGroup, dispatch_get_main_queue()) {
+            AppState.unreadConversionCount =  unreadConversionCount
+            AppState.unreadConversionCount =  unreadConversionCount
+            if AppState.unreadConversionCount != 0 {
+                self.lblUnreadConBadge.text = String(format: "%d",AppState.unreadConversionCount)
+                self.lblUnreadConBadge.hidden = false
+            } else {
+                self.lblUnreadConBadge.hidden = true
+            }
+        }
+    }
+
+    
     // MARK: - Delegates & DataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -159,7 +283,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("TableView view selected index path \(indexPath)")
         
         let chatVc = self.storyboard?.instantiateViewControllerWithIdentifier("ChatViewController") as! ChatViewController!
-        chatVc.city = myGroups[indexPath.row]["key"] as? String ?? ""
+        chatVc.groupID = myGroups[indexPath.row]["key"] as? String ?? ""
         chatVc.senderId = FIRAuth.auth()?.currentUser?.uid
         chatVc.senderDisplayName = "User"
         self.navigationController?.pushViewController(chatVc, animated: true)

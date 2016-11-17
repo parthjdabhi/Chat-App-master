@@ -98,7 +98,7 @@ class CityChatViewController: UIViewController, UITableViewDelegate, UITableView
         cityId = cityId.stringByReplacingOccurrencesOfString(".", withString: "")
         
         let chatVc = self.storyboard?.instantiateViewControllerWithIdentifier("ChatViewController") as! ChatViewController!
-        chatVc.city = cityId
+        chatVc.groupID = cityId
         chatVc.senderId = FIRAuth.auth()?.currentUser?.uid
         chatVc.senderDisplayName = "User"
         self.navigationController?.pushViewController(chatVc, animated: true)

@@ -113,7 +113,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 print(" 0 - - - - - - - - - - -  - - - - - - - - - --  - - - - - -- - - - -  - - -- - - - - - - - - - - - - - -")
                 
-                
             })
         })
     }

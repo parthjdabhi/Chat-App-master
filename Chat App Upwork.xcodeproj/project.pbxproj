@@ -10,6 +10,11 @@
 		5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28E91DDC618800353E25 /* SearchResultsController.swift */; };
 		5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */; };
 		5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EF1DDC848A00353E25 /* PDExtention.swift */; };
+		5EC0F8351DDDC3380047B318 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8341DDDC3380047B318 /* AddContactsViewController.swift */; };
+		5EC0F8371DDDC36A0047B318 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8361DDDC36A0047B318 /* UserData.swift */; };
+		5EC0F83A1DDDC38E0047B318 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8381DDDC38E0047B318 /* ContactsTableViewCell.swift */; };
+		5EC0F83B1DDDC38E0047B318 /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8391DDDC38E0047B318 /* FriendRequestTableViewCell.swift */; };
+		5EC0F83D1DDDC43F0047B318 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F83C1DDDC43F0047B318 /* InboxViewController.swift */; };
 		9E5AD6FFC20EDDE585CAC281 /* Pods_Chat_App_Upwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88917C2F5746EBC4555E4EF /* Pods_Chat_App_Upwork.framework */; };
 		DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */; };
 		DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11CB421DC1C92E000C03E1 /* ViewController.swift */; };
@@ -62,6 +67,11 @@
 		5E1A28E91DDC618800353E25 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		5E1A28EF1DDC848A00353E25 /* PDExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDExtention.swift; sourceTree = "<group>"; };
+		5EC0F8341DDDC3380047B318 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
+		5EC0F8361DDDC36A0047B318 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		5EC0F8381DDDC38E0047B318 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		5EC0F8391DDDC38E0047B318 /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
+		5EC0F83C1DDDC43F0047B318 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		D489C5BA672A0DF87F2924F4 /* Pods-Chat App Upwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat App Upwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat App Upwork/Pods-Chat App Upwork.release.xcconfig"; sourceTree = "<group>"; };
 		DA11CB3D1DC1C92E000C03E1 /* Chat App Upwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat App Upwork.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +137,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EC0F8331DDDC3220047B318 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */,
+				DA7335711DDBA369003FC7C8 /* ChatViewController.swift */,
+				5EC0F8361DDDC36A0047B318 /* UserData.swift */,
+				5EC0F8381DDDC38E0047B318 /* ContactsTableViewCell.swift */,
+				5EC0F8341DDDC3380047B318 /* AddContactsViewController.swift */,
+				5EC0F8391DDDC38E0047B318 /* FriendRequestTableViewCell.swift */,
+				5EC0F83C1DDDC43F0047B318 /* InboxViewController.swift */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
 		B07D14CE584F11B3444F6E7D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +200,7 @@
 				DA11CB751DC1CC00000C03E1 /* RegisterViewController.swift */,
 				DA11CB771DC1D088000C03E1 /* MainViewController.swift */,
 				DA92C1101DC422DF00259E53 /* GroupViewController.swift */,
+				5EC0F8331DDDC3220047B318 /* Contacts */,
 				DA7335681DDBA35C003FC7C8 /* Messaging & Friends */,
 				DA11CB791DC1D2B1000C03E1 /* Helper Files */,
 				DA11CB4A1DC1C92E000C03E1 /* Assets.xcassets */,
@@ -231,7 +256,6 @@
 		DA7335681DDBA35C003FC7C8 /* Messaging & Friends */ = {
 			isa = PBXGroup;
 			children = (
-				5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */,
 				5E1A28E91DDC618800353E25 /* SearchResultsController.swift */,
 				DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */,
 				DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */,
@@ -241,7 +265,6 @@
 				DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */,
 				DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */,
 				DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */,
-				DA7335711DDBA369003FC7C8 /* ChatViewController.swift */,
 			);
 			name = "Messaging & Friends";
 			sourceTree = "<group>";
@@ -429,9 +452,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC0F8371DDDC36A0047B318 /* UserData.swift in Sources */,
 				DA11CB741DC1CBF4000C03E1 /* LoginViewController.swift in Sources */,
 				DA7335751DDBA369003FC7C8 /* RecentTableViewCell.swift in Sources */,
 				DA7335781DDBA369003FC7C8 /* FriendListViewController.swift in Sources */,
+				5EC0F83D1DDDC43F0047B318 /* InboxViewController.swift in Sources */,
 				DA11CB761DC1CC00000C03E1 /* RegisterViewController.swift in Sources */,
 				5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */,
 				DA7335741DDBA369003FC7C8 /* UserTableViewCell.swift in Sources */,
@@ -439,6 +464,7 @@
 				DA7335761DDBA369003FC7C8 /* PrivateChatViewController.swift in Sources */,
 				DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */,
 				DA11CB781DC1D088000C03E1 /* MainViewController.swift in Sources */,
+				5EC0F83A1DDDC38E0047B318 /* ContactsTableViewCell.swift in Sources */,
 				DA92C1111DC422DF00259E53 /* GroupViewController.swift in Sources */,
 				5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */,
 				DA11CB491DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld in Sources */,
@@ -449,8 +475,10 @@
 				DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */,
 				DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */,
 				5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */,
+				5EC0F83B1DDDC38E0047B318 /* FriendRequestTableViewCell.swift in Sources */,
 				DA11CB801DC1D334000C03E1 /* CommonUtils.swift in Sources */,
 				DA11CB7C1DC1D2CF000C03E1 /* MBProgressHUD.m in Sources */,
+				5EC0F8351DDDC3380047B318 /* AddContactsViewController.swift in Sources */,
 				DA73357A1DDBA369003FC7C8 /* ChatViewController.swift in Sources */,
 				DA7335731DDBA369003FC7C8 /* FriendRequestViewController.swift in Sources */,
 			);
