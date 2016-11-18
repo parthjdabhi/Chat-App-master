@@ -21,7 +21,7 @@ import Firebase
 import Foundation
 import Firebase
 
-/*
+
 //-----------------------------------------------------------------------
 let FMESSAGE_PATH = "Message"//	Path name
 let FMESSAGE_GROUPID = "groupId"//	String
@@ -59,7 +59,7 @@ let FMESSAGE_TEXT = "text"//	String
 
 //-----------------------------------------------------------------------
 let FTYPING_PATH = "Typing"//	Path name
-*/
+
 
 class AppState: NSObject {
     
@@ -78,7 +78,7 @@ class AppState: NSObject {
     
     var currentUserImage: UIImage?
     
-    let appBlueColor = UIColor.init(colorLiteralRed: (202.0/255.0), green: (202.0/255.0), blue: (202.0/255.0), alpha: 1)
+    let appBlueColor = UIColor.init(rgb: 033674)
     
     var friendReqCount = 0
     var unreadChatCount = 0

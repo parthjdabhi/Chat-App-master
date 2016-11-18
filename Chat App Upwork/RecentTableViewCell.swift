@@ -1,8 +1,8 @@
 //
 //  RecentTableViewCell.swift
-//  Chat App Upwork
+//  PokeTrainerApp
 //
-//  Created by Dustin Allen on 11/10/16.
+//  Created by iParth on 7/31/16.
 //  Copyright © 2016 Harloch. All rights reserved.
 //
 
@@ -20,7 +20,6 @@ class RecentTableViewCell: UITableViewCell {
     
     var FirRef:FIRDatabaseReference?
     var UserID:String?
-    //var UserSnapShot:FIRDataSnapshot?
     let MyUserID = FIRAuth.auth()?.currentUser?.uid
     var UserDetail:NSDictionary?
     
@@ -34,25 +33,4 @@ class RecentTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-    //    func SetupData(userDetail:NSDictionary?,UserID:String)
-    //    {
-    //        self.imgUser.layer.cornerRadius = self.imgUser.frame.size.width/2;
-    //        self.imgUser.clipsToBounds = true
-    //
-    //        self.UserDetail = userDetail
-    //        self.UserID = UserID
-    //
-    //        print("My Id : \(self.MyUserID) Firend use Id :\(self.UserID)")
-    //
-    //        if let userFirstName = (UserDetail?["userInfo"]?["userFirstName"]) , userLastName = (UserDetail?["userInfo"]?["userLastName"]) {
-    //            self.lblName.text = "\(userFirstName!) \(userLastName!)"
-    //        }
-    //
-    //        if let base64String = UserDetail?["profileData"]?["userPhoto"] as? String {
-    //            // decode image
-    //            self.imgUser.image = CommonUtils.sharedUtils.decodeImage(base64String)
-    //        }
-    //    }
-    
 }

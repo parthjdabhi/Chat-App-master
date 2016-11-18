@@ -10,6 +10,14 @@ pod 'Firebase/Auth'
 pod 'Firebase/Messaging'
 pod 'Firebase/Crash'
 
+#pod 'Firebase/AdMob'
+#pod 'Firebase/Analytics'
+
+#pod 'Firebase/AppIndexing'
+#pod 'Firebase/DynamicLinks'
+#pod 'Firebase/Invites'
+#pod 'Firebase/RemoteConfig'
+
 pod 'IQKeyboardManagerSwift', '4.0.5'
 pod 'IQDropDownTextField', '~> 1.0'
 

@@ -43,7 +43,7 @@ class UserTableViewCell: UITableViewCell {
         print("My Id : \(self.MyUserID) Firend use Id :\(self.UserID)")
         
         if let userFirstName = (UserDetail?["userInfo"]?["userFirstName"]) , userLastName = (UserDetail?["userInfo"]?["userLastName"]) {
-            self.lblName.text = "\(userFirstName!) \(userLastName!)"
+            self.lblName.text = "\(userFirstName) \(userLastName)"
         }
         
         if let base64String = UserDetail?["profileData"]?["userPhoto"] as? String {

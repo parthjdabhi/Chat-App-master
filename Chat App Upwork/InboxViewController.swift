@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import SVProgressHUD
 
 //View Friend Request
 class InboxViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate {
@@ -69,14 +70,8 @@ class InboxViewController: UIViewController ,UITableViewDataSource, UITableViewD
                         
                     })
                 }
-                
-                
             }
-            
-            
         })
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,8 +88,22 @@ class InboxViewController: UIViewController ,UITableViewDataSource, UITableViewD
         self.navigationController?.popViewControllerAnimated(true)  //Changed to Push
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userArry.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if userArry.count == 0 {
+            let emptyLabel = UILabel(frame: tableView.frame)
+            emptyLabel.text = "No pending friend request"
+            emptyLabel.textColor = UIColor.darkGrayColor();
+            emptyLabel.textAlignment = .Center;
+            emptyLabel.numberOfLines = 3
+            
+            tableView.backgroundView = emptyLabel
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            return 0
+        } else {
+            tableView.backgroundView = nil
+            return userArry.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -115,30 +124,41 @@ class InboxViewController: UIViewController ,UITableViewDataSource, UITableViewD
         }
         
         cell.onAcceptButtonTapped = {
-            /*
-            let friendRequests = AppState.sharedInstance.currentUser.value!["friendRequests"]
-            let fid = self.userArry[indexPath.row].getUid()
-            var requests = friendRequests as! [String:String]
             
-            for (key, value) in requests {
-                if value == fid {
-                    requests.removeValueForKey(key)
+            FIRDatabase.database().reference().child("users").child(myUserID!).observeSingleEventOfType(.Value, withBlock: { (snapshot: FIRDataSnapshot) in
+                //
+                
+                AppState.sharedInstance.currentUser = snapshot
+                
+                let friendRequests = AppState.sharedInstance.currentUser.value!["friendRequests"]
+                let fid = self.userArry[indexPath.row].getUid()
+                var requests = friendRequests as! [String:String]
+                
+                for (key, value) in requests {
+                    if value == fid {
+                        requests.removeValueForKey(key)
+                    }
                 }
-            }
+                
+                //let userID = FIRAuth.auth()?.currentUser?.uid
+                let userRef = self.ref.child("users").child(myUserID!)
+                
+                let dic = ["friendRequests" : requests]
+                
+                userRef.updateChildValues(dic)
+                userRef.child("friends").childByAutoId().setValue(fid)
+                
+                let friendRef = self.ref.child("users").child(fid)
+                friendRef.child("friends").childByAutoId().setValue(myUserID!)
+                
+                self.userArry.removeAtIndex(indexPath.row)
+                self.tableView.reloadData()
+                
+            }, withCancelBlock: { (error: NSError) in
+                //
+                SVProgressHUD.showErrorWithStatus("Action failed!")
+            })
             
-            let userID = FIRAuth.auth()?.currentUser?.uid
-            let userRef = self.ref.child("users").child(userID!)
-            
-            let dic = ["friendRequests" : requests]
-            
-            userRef.updateChildValues(dic)
-            userRef.child("friends").childByAutoId().setValue(fid)
-            
-            let friendRef = self.ref.child("users").child(fid)
-            friendRef.child("friends").childByAutoId().setValue(userID)
-            
-            self.userArry.removeAtIndex(indexPath.row)
-            self.tableView.reloadData()
             
 //            FIRDatabase.database().reference().child("users").child(fid).child("userInfo").observeSingleEventOfType(.Value, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
 //                
@@ -159,41 +179,50 @@ class InboxViewController: UIViewController ,UITableViewDataSource, UITableViewD
 //                    
 //                }
 //            })
-             */
+            
         }
         
         cell.onDeclineButtonTapped = {
-            /*
-            let friendRequests = AppState.sharedInstance.currentUser.value!["friendRequests"]
-            let fid = self.userArry[indexPath.row].getUid()
-            var requests = friendRequests as! [String:String]
             
-            for (key, value) in requests {
-                if value == fid {
-                    requests.removeValueForKey(key)
-                }
-            }
-            
-            let userID = FIRAuth.auth()?.currentUser?.uid
-            let userRef = self.ref.child("users").child(userID!)
-            let dic = ["friendRequests" : requests]
-            
-            userRef.updateChildValues(dic) { (error, firebase) in
-                if error == nil {
-                    userRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-                        // Get user value
-                        AppState.sharedInstance.currentUser = snapshot
-                    }) { (error) in
-                        print(error.localizedDescription)
+            FIRDatabase.database().reference().child("users").child(myUserID!).observeSingleEventOfType(.Value, withBlock: { (snapshot: FIRDataSnapshot) in
+                //
+                
+                AppState.sharedInstance.currentUser = snapshot
+                
+                let friendRequests = AppState.sharedInstance.currentUser.value!["friendRequests"]
+                let fid = self.userArry[indexPath.row].getUid()
+                var requests = friendRequests as! [String:String]
+                
+                for (key, value) in requests {
+                    if value == fid {
+                        requests.removeValueForKey(key)
                     }
-                } else {
-                    print(error?.description)
                 }
-            }
-            self.userArry.removeAtIndex(indexPath.row)
-            self.tableView.reloadData()
-
-             */
+                
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                let userRef = self.ref.child("users").child(userID!)
+                let dic = ["friendRequests" : requests]
+                
+                userRef.updateChildValues(dic) { (error, firebase) in
+                    if error == nil {
+                        userRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                            // Get user value
+                            AppState.sharedInstance.currentUser = snapshot
+                        }) { (error) in
+                            print(error.localizedDescription)
+                        }
+                    } else {
+                        print(error?.description)
+                    }
+                }
+                self.userArry.removeAtIndex(indexPath.row)
+                self.tableView.reloadData()
+                
+            }, withCancelBlock: { (error: NSError) in
+                    //
+                    SVProgressHUD.showErrorWithStatus("Action failed!")
+            })
+            
         }
         
         return cell

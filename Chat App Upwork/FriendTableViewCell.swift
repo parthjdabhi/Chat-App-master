@@ -12,6 +12,8 @@ class FriendTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     
+    var onDeleteButtonTapped : (() -> Void)? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +23,12 @@ class FriendTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func deleteBtnTapped(sender: UIButton) {
+        if let onDeleteButtonTapped = self.onDeleteButtonTapped {
+            onDeleteButtonTapped()
+        }
     }
 
 }

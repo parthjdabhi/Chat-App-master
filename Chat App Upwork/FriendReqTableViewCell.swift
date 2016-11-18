@@ -58,7 +58,7 @@ class FriendReqTableViewCell: UITableViewCell {
             //print(UserDetail)
             
             if let userFirstName = (UserDetail?["userInfo"]?["userFirstName"]) , userLastName = (UserDetail?["userInfo"]?["userLastName"]) {
-                self.lblName.text = "\(userFirstName!) \(userLastName!)"
+                self.lblName.text = "\(userFirstName) \(userLastName)"
             }
             
             if let base64String = UserDetail?["profileData"]?["userPhoto"] as? String {

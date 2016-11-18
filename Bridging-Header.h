@@ -6,9 +6,26 @@
 //  Copyright © 2016 Harloch. All rights reserved.
 //
 
-#ifndef Bridging_Header_h
-#define Bridging_Header_h
+#ifndef Bridge_header_h
+#define Bridge_header_h
 
+//#import "Google/Core.h"
+//#import "GoogleSignIn.h"
+//#import <Google/SignIn.h>
 
-#endif /* Bridging_Header_h */
+#endif /* Bridge_header_h */
+
 #import "MBProgressHUD.h"
+
+/*
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIEcommerceFields.h"
+#import "GAIEcommerceProduct.h"
+#import "GAIEcommerceProductAction.h"
+#import "GAIEcommercePromotion.h"
+#import "GAIFields.h"
+#import "GAILogger.h"
+#import "GAITrackedViewController.h"
+#import "GAITracker.h"
+*/

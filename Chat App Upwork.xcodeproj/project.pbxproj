@@ -10,6 +10,10 @@
 		5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28E91DDC618800353E25 /* SearchResultsController.swift */; };
 		5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */; };
 		5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EF1DDC848A00353E25 /* PDExtention.swift */; };
+		5EB8CA0D1DDED5440043EF3A /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA0B1DDED5440043EF3A /* RecentTableViewCell.swift */; };
+		5EB8CA0E1DDED5440043EF3A /* RecentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA0C1DDED5440043EF3A /* RecentChatViewController.swift */; };
+		5EB8CA101DDED5710043EF3A /* MyChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA0F1DDED5710043EF3A /* MyChatViewController.swift */; };
+		5EB8CA131DDEDB390043EF3A /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA121DDEDB390043EF3A /* AddressBookViewController.swift */; };
 		5EC0F8351DDDC3380047B318 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8341DDDC3380047B318 /* AddContactsViewController.swift */; };
 		5EC0F8371DDDC36A0047B318 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8361DDDC36A0047B318 /* UserData.swift */; };
 		5EC0F83A1DDDC38E0047B318 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0F8381DDDC38E0047B318 /* ContactsTableViewCell.swift */; };
@@ -34,10 +38,7 @@
 		DA7335721DDBA369003FC7C8 /* FriendReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */; };
 		DA7335731DDBA369003FC7C8 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */; };
 		DA7335741DDBA369003FC7C8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */; };
-		DA7335751DDBA369003FC7C8 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356C1DDBA369003FC7C8 /* RecentTableViewCell.swift */; };
 		DA7335761DDBA369003FC7C8 /* PrivateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */; };
-		DA7335771DDBA369003FC7C8 /* RecentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */; };
-		DA7335781DDBA369003FC7C8 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */; };
 		DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */; };
 		DA73357A1DDBA369003FC7C8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7335711DDBA369003FC7C8 /* ChatViewController.swift */; };
 		DA73357C1DDBA71A003FC7C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73357B1DDBA71A003FC7C8 /* Constants.swift */; };
@@ -67,6 +68,10 @@
 		5E1A28E91DDC618800353E25 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		5E1A28EF1DDC848A00353E25 /* PDExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDExtention.swift; sourceTree = "<group>"; };
+		5EB8CA0B1DDED5440043EF3A /* RecentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		5EB8CA0C1DDED5440043EF3A /* RecentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewController.swift; sourceTree = "<group>"; };
+		5EB8CA0F1DDED5710043EF3A /* MyChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChatViewController.swift; sourceTree = "<group>"; };
+		5EB8CA121DDEDB390043EF3A /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		5EC0F8341DDDC3380047B318 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
 		5EC0F8361DDDC36A0047B318 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		5EC0F8381DDDC38E0047B318 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,10 +104,7 @@
 		DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendReqTableViewCell.swift; sourceTree = "<group>"; };
 		DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
 		DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		DA73356C1DDBA369003FC7C8 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateChatViewController.swift; sourceTree = "<group>"; };
-		DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewController.swift; sourceTree = "<group>"; };
-		DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityChatViewController.swift; sourceTree = "<group>"; };
 		DA7335711DDBA369003FC7C8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DA73357B1DDBA71A003FC7C8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -137,6 +139,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EB8CA111DDED5820043EF3A /* Recent Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5EB8CA0B1DDED5440043EF3A /* RecentTableViewCell.swift */,
+				5EB8CA0C1DDED5440043EF3A /* RecentChatViewController.swift */,
+				5EB8CA121DDEDB390043EF3A /* AddressBookViewController.swift */,
+				5EB8CA0F1DDED5710043EF3A /* MyChatViewController.swift */,
+			);
+			name = "Recent Chat";
+			sourceTree = "<group>";
+		};
 		5EC0F8331DDDC3220047B318 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 				DA11CB751DC1CC00000C03E1 /* RegisterViewController.swift */,
 				DA11CB771DC1D088000C03E1 /* MainViewController.swift */,
 				DA92C1101DC422DF00259E53 /* GroupViewController.swift */,
+				5EB8CA111DDED5820043EF3A /* Recent Chat */,
 				5EC0F8331DDDC3220047B318 /* Contacts */,
 				DA7335681DDBA35C003FC7C8 /* Messaging & Friends */,
 				DA11CB791DC1D2B1000C03E1 /* Helper Files */,
@@ -260,10 +274,7 @@
 				DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */,
 				DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */,
 				DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */,
-				DA73356C1DDBA369003FC7C8 /* RecentTableViewCell.swift */,
 				DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */,
-				DA73356E1DDBA369003FC7C8 /* RecentChatViewController.swift */,
-				DA73356F1DDBA369003FC7C8 /* FriendListViewController.swift */,
 				DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */,
 			);
 			name = "Messaging & Friends";
@@ -454,13 +465,11 @@
 			files = (
 				5EC0F8371DDDC36A0047B318 /* UserData.swift in Sources */,
 				DA11CB741DC1CBF4000C03E1 /* LoginViewController.swift in Sources */,
-				DA7335751DDBA369003FC7C8 /* RecentTableViewCell.swift in Sources */,
-				DA7335781DDBA369003FC7C8 /* FriendListViewController.swift in Sources */,
 				5EC0F83D1DDDC43F0047B318 /* InboxViewController.swift in Sources */,
+				5EB8CA0D1DDED5440043EF3A /* RecentTableViewCell.swift in Sources */,
 				DA11CB761DC1CC00000C03E1 /* RegisterViewController.swift in Sources */,
 				5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */,
 				DA7335741DDBA369003FC7C8 /* UserTableViewCell.swift in Sources */,
-				DA7335771DDBA369003FC7C8 /* RecentChatViewController.swift in Sources */,
 				DA7335761DDBA369003FC7C8 /* PrivateChatViewController.swift in Sources */,
 				DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */,
 				DA11CB781DC1D088000C03E1 /* MainViewController.swift in Sources */,
@@ -471,9 +480,11 @@
 				DA73357C1DDBA71A003FC7C8 /* Constants.swift in Sources */,
 				DA7335721DDBA369003FC7C8 /* FriendReqTableViewCell.swift in Sources */,
 				DA92C1131DC42B8100259E53 /* AppState.swift in Sources */,
+				5EB8CA0E1DDED5440043EF3A /* RecentChatViewController.swift in Sources */,
 				DA11CB821DC1D378000C03E1 /* Helper.swift in Sources */,
 				DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */,
 				DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */,
+				5EB8CA101DDED5710043EF3A /* MyChatViewController.swift in Sources */,
 				5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */,
 				5EC0F83B1DDDC38E0047B318 /* FriendRequestTableViewCell.swift in Sources */,
 				DA11CB801DC1D334000C03E1 /* CommonUtils.swift in Sources */,
@@ -481,6 +492,7 @@
 				5EC0F8351DDDC3380047B318 /* AddContactsViewController.swift in Sources */,
 				DA73357A1DDBA369003FC7C8 /* ChatViewController.swift in Sources */,
 				DA7335731DDBA369003FC7C8 /* FriendRequestViewController.swift in Sources */,
+				5EB8CA131DDEDB390043EF3A /* AddressBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

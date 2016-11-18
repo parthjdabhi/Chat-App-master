@@ -86,6 +86,7 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
                 }
             }
             self.tableView.reloadData()
+            CommonUtils.sharedUtils.hideProgress()
         })
     }
     
@@ -138,11 +139,30 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: - Delegates
+    // MARK: -  UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        var records = 0
         if self.searchActive {
-            return filtered.count
+            records = filtered.count
         }
-        return userArry.count
+        records = userArry.count
+        
+        if records == 0 {
+            let emptyLabel = UILabel(frame: tableView.frame)
+            emptyLabel.text = "No new friend founds"
+            emptyLabel.textColor = UIColor.darkGrayColor();
+            emptyLabel.textAlignment = .Center;
+            emptyLabel.numberOfLines = 3
+            
+            tableView.backgroundView = emptyLabel
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            return 0
+        } else {
+            tableView.backgroundView = nil
+            return records
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
