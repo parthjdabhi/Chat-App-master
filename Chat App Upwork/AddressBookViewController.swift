@@ -28,15 +28,15 @@ class AddressBookViewController: UIViewController,UITableViewDataSource, UITable
         let userID = FIRAuth.auth()?.currentUser?.uid
         
         let frRef = ref.child("users").child(userID!).child("friends")
-        CommonUtils.sharedUtils.showProgress(self.view, label: "Loading....")
+        CommonUtils.sharedUtils.showProgress(self.view, label: "Loading..")
         print("Started")
         
         frRef.observeEventType(.Value, withBlock: { snapshot in
             self.userArry.removeAll()
             print(snapshot.value)
-            if let friendRequests = snapshot.value as?[String: String] {
+            if let friends = snapshot.value as?[String: String] {
                 print("if pritned")
-                for(_, value) in friendRequests{
+                for(_, value) in friends {
                     
                     let uRef = self.ref.child("users").child(value)
                     uRef.observeSingleEventOfType(FIRDataEventType.Value, withBlock: { snapshot in

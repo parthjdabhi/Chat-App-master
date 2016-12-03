@@ -46,6 +46,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         getGroups()
+        observeNewlyAddedGroups()
         // inviteTapped()
     }
     
@@ -118,7 +119,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         dispatch_group_enter(myGroup)
         
-        
+        //.queryOrderedByChild("name").queryEqualToValue("testios")
         SVProgressHUD.showWithStatus("Loading..")
         FIRDatabase.database().reference().child("groups").observeSingleEventOfType(.Value, withBlock: { snapshot in
             
@@ -151,7 +152,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
                 placeDict["key"] = child.key
                 
-                myGroups.append(placeDict)
+                if let members = placeDict["members"] as? Dictionary<String,AnyObject>
+                    where members.indexForKey(myUserID ?? "") != nil {
+                    myGroups.append(placeDict)
+                } else {
+                    print("it's Not My group - \(placeDict["key"])")
+                }
+                
+                
                 //print(placeDict)
             }
             dispatch_group_leave(myGroup)
@@ -166,6 +174,29 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tblGroupList.reloadData()
             }
         }
+    }
+    
+    private func observeNewlyAddedGroups()
+    {
+        FIRDatabase.database().reference().child("groups").observeEventType(.ChildAdded, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
+            if snapshot.exists() {
+                if var dic = snapshot.valueInExportFormat() as? [String:AnyObject] {
+                    
+                    if let members = dic["members"] as? Dictionary<String,AnyObject>
+                        where members.indexForKey(myUserID ?? "") != nil
+                    {
+                        dic["key"] = snapshot.key
+                        
+                        myGroups.append(dic)
+                        
+                        self.tblGroupList.reloadData()
+                        //self.tblGroupList.insertRowsAtIndexPaths([NSIndexPath(forRow: myGroups.count-1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Left)
+                    } else {
+                        print("it's Not My group - \(dic["key"])")
+                    }
+                }
+            }
+        })
     }
     
     func updateFriendRequestsCount() {
