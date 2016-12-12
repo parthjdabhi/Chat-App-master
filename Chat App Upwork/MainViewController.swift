@@ -41,6 +41,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.username.text = "Hi"
             }
             
+            //let userInfo = snapshot.valueInExportFormat() as? NSMutableDictionary ?? NSMutableDictionary()
+            let userInfo = NSMutableDictionary()
+            userInfo["deviceToken"] = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") as? String ?? ""
+            self.ref.child("users").child(userID!).updateChildValues(userInfo as [NSObject : AnyObject])
+            
         }) { (error) in
             print(error.localizedDescription)
         }

@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
 
+        let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = 0
+        
         return true
     }
 
@@ -62,6 +68,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // MARK: - Push Notification
+    
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        print(deviceToken)
+        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Sandbox)
+        
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "deviceToken")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        //Parth Device : 25229d664e272484a11dc71519ea6d31959614a689adec3bd4e2f00abe69803c
+        print("Device Token:", tokenString)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
+    {
+        print("Recived: \(userInfo)")
+        
+        application.applicationIconBadgeNumber = 0
+        
+        //        if (application.applicationState == .Active)
+        //        {
+        //            // Nothing to do if applicationState is Inactive, the iOS already displayed an alert view.
+        //            var temp : NSDictionary = userInfo
+        //            if let info = userInfo["aps"] as? Dictionary<String, AnyObject>
+        //            {
+        //                var alertMsg = info["alert"] as? String ?? "Notification"
+        //                var alert: UIAlertView!
+        //                alert = UIAlertView(title: "", message: alertMsg, delegate: nil, cancelButtonTitle: "OK")
+        //                alert.show()
+        //            }
+        //        }
     }
 
     // MARK: - Core Data stack

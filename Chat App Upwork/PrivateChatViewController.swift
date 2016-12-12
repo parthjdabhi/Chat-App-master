@@ -484,14 +484,14 @@ class PrivateChatViewController: JSQMessagesViewController {
             }
         }
         
-        ref.child("users").child(OppUserId!).child("userInfo").observeSingleEventOfType(.Value, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
+        ref.child("users").child(OppUserId!).observeSingleEventOfType(.Value, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
             
             let userInfo = snapshot.valueInExportFormat() as? NSMutableDictionary ?? NSMutableDictionary()
             let token = userInfo["deviceToken"] as? String ?? ""
             
             if token.characters.count > 1 {
                 
-                Alamofire.request(.GET, "http://trainersmatchapp.com/poketrainerapp/api/notifications.php", parameters: ["token": token,"message":"You have a new message!","type":"newMessage","data":"newMessage"])
+                Alamofire.request(.GET, "http://barelabor.com/ChatApp/api/notifications.php", parameters: ["token": token,"message":"You have a new message!","type":"newMessage","data":"newMessage"])
                     .responseJSON { response in
                         switch response.result {
                         case .Success:
