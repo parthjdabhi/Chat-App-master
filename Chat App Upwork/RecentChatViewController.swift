@@ -144,7 +144,12 @@ class RecentChatViewController: UIViewController {
                         if var dic = rest.value as? [String:AnyObject] {
                             print(rest.key)
                             print("Convesation : \(dic)")
-                            lastMsgText = dic[MESSAGE_TEXT] as? String ?? ""
+                            if let type = dic[FMESSAGE_TYPE] as? String where type == MESSAGE_STICKER {
+                                lastMsgText = "Sticker"
+                            } else {
+                                lastMsgText = dic[MESSAGE_TEXT] as? String ?? ""
+                            }
+                            
                             cell.lblElapsed?.text = (dic[FRECENT_CREATEDAT] as? String ?? "").asDate?.getElapsedInterval()
                         }
                     }

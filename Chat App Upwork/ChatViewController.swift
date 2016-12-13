@@ -13,7 +13,7 @@ import JSQMessagesViewController
 import SDWebImage
 import Alamofire
 
-class ChatViewController: JSQMessagesViewController {
+class ChatViewController: JSQMessagesViewController, KeyboardDelegate {
     
     // MARK: Properties
     var groupID: String!
@@ -48,7 +48,8 @@ class ChatViewController: JSQMessagesViewController {
         
         messageRef = rootRef.child("groupchat").child(groupID)
         
-        self.inputToolbar.contentView.leftBarButtonItem = nil
+        //self.inputToolbar.contentView.leftBarButtonItem = nil
+        self.inputToolbar.contentView.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
         self.topContentAdditionalInset = 44
         
         setupBubbles()
@@ -94,6 +95,63 @@ class ChatViewController: JSQMessagesViewController {
         return UIStatusBarStyle.LightContent
     }
     
+    
+    //, KeyboardDelegate
+    //self.inputToolbar.contentView.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
+    
+    // method for keyboard delegate protocol
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+        self.inputToolbar.contentView.textView.inputView =  nil
+    }
+    
+    func keyWasTapped(data: String) {
+        print("Tapped : \(data)")
+        
+        let itemRef = messageRef.childByAutoId()
+        let messageItem = [
+            "type": MESSAGE_STICKER,
+            "text": data,
+            "senderId": senderId,
+            "senderName": AppState.sharedInstance.displayName ?? "",
+            "createdAt": NSDate().customFormatted
+        ]
+        itemRef.setValue(messageItem)
+        
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        
+        finishSendingMessage()
+        isTyping = false
+        
+        dismissKeyboard()
+    }
+    
+    override func didPressAccessoryButton(sender: UIButton!) {
+        print("didPressAccessoryButton inputView height : \(self.inputToolbar.contentView.textView.inputView?.frame.height)")
+        
+        if let height = self.inputToolbar.contentView.textView.inputView?.frame.height
+            where height == 216
+        {
+            self.inputToolbar.contentView.textView.endEditing(true)
+            return
+        }
+        
+        // initialize custom keyboard
+        let keyboardView = PDKeyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 216))
+        keyboardView.delegate = self // the view controller will be notified by the keyboard whenever a key is tapped
+        
+        // replace system keyboard with custom keyboard
+        self.inputToolbar.contentView.textView.inputView = keyboardView
+        
+        if self.inputToolbar.contentView.textView.isFirstResponder() {
+            //self.inputToolbar.contentView.textView.endEditing(true)
+            self.inputToolbar.contentView.textView.reloadInputViews()
+        } else {
+            self.inputToolbar.contentView.textView.becomeFirstResponder()
+        }
+    }
+
     
     
     //Start Blocking functions
@@ -350,9 +408,9 @@ class ChatViewController: JSQMessagesViewController {
         let message = messages[indexPath.item]
         
         if message.senderId == senderId {
-            cell.textView!.textColor = UIColor.whiteColor()
+            cell.textView?.textColor = UIColor.whiteColor()
         } else {
-            cell.textView!.textColor = UIColor.blackColor()
+            cell.textView?.textColor = UIColor.blackColor()
             
             //let cell:JSQMessagesCollectionViewCell = super.collectionView(collectionView, avatarImageDataForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
             //return JSQMessagesAvatarImageFactory.circularAvatarHighlightedImage(UIImage(named: "POKE-TRAINER-LOGO.png"), withDiameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
@@ -373,7 +431,7 @@ class ChatViewController: JSQMessagesViewController {
             //cell.avatarImageView.sd_setImageWithURL(NSURL.init(string:self.userSession.profilePictureUrl), placeholderImage: UIImage(named: "POKE-TRAINER-LOGO.png"))
         }
         
-        cell.textView.selectable = false
+        cell.textView?.selectable = false
         
         return cell
     }
@@ -457,7 +515,8 @@ class ChatViewController: JSQMessagesViewController {
                 let senderName = snapshot.value!["senderName"] as? String ?? id
                 let createdAt = snapshot.value!["createdAt"] as? String ?? ""
                 
-                self.addMessage(id, text: text,displayName: senderName,createdAt: createdAt,key: snapshot.key)
+                self.addMessage(id,type: snapshot.value!["type"] as? String, text: text,displayName: senderName,createdAt: createdAt,key: snapshot.key)
+                
                 self.finishReceivingMessage()
             }
         })
@@ -482,12 +541,24 @@ class ChatViewController: JSQMessagesViewController {
         
     }
     
-    func addMessage(id: String, text: String,displayName: String,createdAt: String,key: String) {
+    func addMessage(id: String, type: String?, text: String,displayName: String,createdAt: String,key: String) {
         
-        let message = JSQMessage(senderId: id, senderDisplayName: displayName, date: createdAt.asDate, text: text)
-        //JSQMessage(senderId: id, displayName: id, text: text)
-        message.key = key
-        messages.append(message)
+        
+        if let type = type
+            where type == MESSAGE_STICKER
+        {
+            let photoItem:JSQPhotoMediaItem = StickerPhotoMediaItem(image: UIImage(named: text))
+            let message = JSQMessage(senderId: id, displayName: displayName, media: photoItem)
+            message.key = key
+            messages.append(message)
+        } else {
+            let message = JSQMessage(senderId: id, senderDisplayName: displayName, date: createdAt.asDate, text: text)
+            //JSQMessage(senderId: id, displayName: id, text: text)
+            message.key = key
+            messages.append(message)
+        }
+        
+        
     }
     
     override func textViewDidChange(textView: UITextView) {
@@ -499,6 +570,7 @@ class ChatViewController: JSQMessagesViewController {
         
         let itemRef = messageRef.childByAutoId()
         let messageItem = [
+            "type": "text",
             "text": text,
             "senderId": senderId,
             "senderName": AppState.sharedInstance.displayName ?? "",

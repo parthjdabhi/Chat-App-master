@@ -48,6 +48,7 @@ let FMESSAGE_CREATEDAT = "createdAt"//	Interval
 
 //-----------------------------------------------------------------------
 let MESSAGE_TEXT = "text"
+let MESSAGE_STICKER = "sticker"
 
 //-----------------------------------------------------------------------
 let TEXT_DELIVERED = "Delivered"

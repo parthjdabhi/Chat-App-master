@@ -268,11 +268,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/RecentChatViewController.swift"
-            timestampString = "501164967.757624"
+            timestampString = "503328954.553943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
             <Locations>
@@ -316,11 +316,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/RecentChatViewController.swift"
-            timestampString = "501164992.716648"
+            timestampString = "503328954.553943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -332,42 +332,42 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165063.983947"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
-            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            startingLineNumber = "558"
+            endingLineNumber = "558"
+            landmarkName = "observeMessages()"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Chat_App_Upwork.MyChatViewController.collectionView (__ObjC.UICollectionView, cellForItemAtIndexPath : __ObjC.NSIndexPath) -&gt; __ObjC.UICollectionViewCell"
+                  symbolName = "Chat_App_Upwork.MyChatViewController.(observeMessages in _A394E67C536A79ABB31BA422E6FB8F2A) () -&gt; ()"
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.567946"
+                  timestampString = "503324896.772621"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "462"
-                  endingLineNumber = "462"
-                  offsetFromSymbolStart = "2412">
+                  startingLineNumber = "500"
+                  endingLineNumber = "500"
+                  offsetFromSymbolStart = "529">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Chat_App_Upwork.MyChatViewController.(collectionView (__ObjC.UICollectionView, cellForItemAtIndexPath : __ObjC.NSIndexPath) -&gt; __ObjC.UICollectionViewCell).(closure #1)"
+                  symbolName = "Chat_App_Upwork.MyChatViewController.((observeMessages in _A394E67C536A79ABB31BA422E6FB8F2A) () -&gt; ()).(closure #1)"
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.568084"
+                  timestampString = "503324896.772934"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "463"
-                  endingLineNumber = "463"
+                  startingLineNumber = "501"
+                  endingLineNumber = "501"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
@@ -380,59 +380,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165071.298932"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "500"
-            endingLineNumber = "500"
-            landmarkName = "observeMessages()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Chat_App_Upwork.MyChatViewController.(observeMessages in _A394E67C536A79ABB31BA422E6FB8F2A) () -&gt; ()"
-                  moduleName = "Chat App Upwork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.569656"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "500"
-                  endingLineNumber = "500"
-                  offsetFromSymbolStart = "488">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Chat_App_Upwork.MyChatViewController.((observeMessages in _A394E67C536A79ABB31BA422E6FB8F2A) () -&gt; ()).(closure #1)"
-                  moduleName = "Chat App Upwork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.569793"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "501"
-                  endingLineNumber = "501"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165072.282958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "559"
+            endingLineNumber = "559"
             landmarkName = "observeMessages()"
             landmarkType = "5">
          </BreakpointContent>
@@ -444,11 +396,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165085.30039"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "538"
-            endingLineNumber = "538"
+            startingLineNumber = "606"
+            endingLineNumber = "606"
             landmarkName = "observeMessages()"
             landmarkType = "5">
          </BreakpointContent>
@@ -460,11 +412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165085.962606"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "539"
-            endingLineNumber = "539"
+            startingLineNumber = "607"
+            endingLineNumber = "607"
             landmarkName = "observeMessages()"
             landmarkType = "5">
             <Locations>
@@ -476,12 +428,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.573374"
+                  timestampString = "503324896.776978"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "539"
                   endingLineNumber = "539"
-                  offsetFromSymbolStart = "7048">
+                  offsetFromSymbolStart = "9065">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -491,12 +443,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.573582"
+                  timestampString = "503324896.777218"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "540"
                   endingLineNumber = "540"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -508,11 +460,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165095.88234"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
             <Locations>
@@ -524,12 +476,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.575721"
+                  timestampString = "503324896.778702"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "198"
                   endingLineNumber = "198"
-                  offsetFromSymbolStart = "664">
+                  offsetFromSymbolStart = "758">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -539,12 +491,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.575976"
+                  timestampString = "503324896.778928"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
                   endingLineNumber = "199"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "39">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -556,11 +508,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165096.378462"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
             <Locations>
@@ -572,12 +524,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.577922"
+                  timestampString = "503324896.780605"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
                   endingLineNumber = "199"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "39">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -587,12 +539,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.578156"
+                  timestampString = "503324896.780914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
                   endingLineNumber = "199"
-                  offsetFromSymbolStart = "692">
+                  offsetFromSymbolStart = "787">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -604,11 +556,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165102.578413"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
             <Locations>
@@ -620,12 +572,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.579947"
+                  timestampString = "503324896.782698"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "218"
                   endingLineNumber = "218"
-                  offsetFromSymbolStart = "1880">
+                  offsetFromSymbolStart = "2355">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -635,12 +587,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.580295"
+                  timestampString = "503324896.782883"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "220"
                   endingLineNumber = "220"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -652,11 +604,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165106.675661"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -668,11 +620,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165112.31397"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
             <Locations>
@@ -684,12 +636,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.583122"
+                  timestampString = "503324896.785396"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "234"
                   endingLineNumber = "234"
-                  offsetFromSymbolStart = "1784">
+                  offsetFromSymbolStart = "2091">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -699,12 +651,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.583271"
+                  timestampString = "503324896.785621"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "235"
                   endingLineNumber = "235"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "39">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -716,11 +668,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165113.587794"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
             <Locations>
@@ -732,12 +684,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.584807"
+                  timestampString = "503324896.7867"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "235"
                   endingLineNumber = "235"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "39">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -747,12 +699,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.584941"
+                  timestampString = "503324896.786871"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "235"
                   endingLineNumber = "235"
-                  offsetFromSymbolStart = "692">
+                  offsetFromSymbolStart = "787">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -764,11 +716,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165121.350238"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
             <Locations>
@@ -780,12 +732,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.586353"
+                  timestampString = "503324896.78784"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "254"
                   endingLineNumber = "254"
-                  offsetFromSymbolStart = "1972">
+                  offsetFromSymbolStart = "2488">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -795,12 +747,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/MyChatViewController.swift"
-                  timestampString = "502465741.586487"
+                  timestampString = "503324896.787983"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "256"
                   endingLineNumber = "256"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -812,11 +764,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/MyChatViewController.swift"
-            timestampString = "501165123.800782"
+            timestampString = "503328386.617768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "collectionView(_:performAction:forItemAtIndexPath:withSender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -828,11 +780,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat App Upwork/ChatViewController.swift"
-            timestampString = "501165919.834235"
+            timestampString = "503322853.822544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
+            startingLineNumber = "512"
+            endingLineNumber = "512"
             landmarkName = "observeMessages()"
             landmarkType = "5">
             <Locations>
@@ -844,12 +796,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/ChatViewController.swift"
-                  timestampString = "502465741.589042"
+                  timestampString = "503324896.789884"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "454"
-                  endingLineNumber = "454"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "512"
+                  endingLineNumber = "512"
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -859,12 +811,12 @@
                   moduleName = "Chat App Upwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/13%20Chat%20App%20Upwork/Chat-App-Upwork-master/Chat%20App%20Upwork/ChatViewController.swift"
-                  timestampString = "502465741.589318"
+                  timestampString = "503324896.790164"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "454"
-                  endingLineNumber = "454"
-                  offsetFromSymbolStart = "776">
+                  startingLineNumber = "512"
+                  endingLineNumber = "512"
+                  offsetFromSymbolStart = "896">
                </Location>
             </Locations>
          </BreakpointContent>

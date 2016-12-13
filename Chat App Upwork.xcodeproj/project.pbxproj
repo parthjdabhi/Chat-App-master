@@ -10,6 +10,11 @@
 		5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28E91DDC618800353E25 /* SearchResultsController.swift */; };
 		5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */; };
 		5E1A28F01DDC848A00353E25 /* PDExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A28EF1DDC848A00353E25 /* PDExtention.swift */; };
+		5E505A1C1E0014280004B7C6 /* PDKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E505A191E0014280004B7C6 /* PDKeyboard.xib */; };
+		5E505A1D1E0014280004B7C6 /* PDKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E505A1A1E0014280004B7C6 /* PDKeyboard.swift */; };
+		5E505A1E1E0014280004B7C6 /* PDHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E505A1B1E0014280004B7C6 /* PDHorizontalFlowLayout.swift */; };
+		5E505A201E00142C0004B7C6 /* Sticker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E505A1F1E00142C0004B7C6 /* Sticker.xcassets */; };
+		5E505A221E001F6C0004B7C6 /* StickerPhotoMediaItem .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E505A211E001F6C0004B7C6 /* StickerPhotoMediaItem .swift */; };
 		5EB8CA0D1DDED5440043EF3A /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA0B1DDED5440043EF3A /* RecentTableViewCell.swift */; };
 		5EB8CA0E1DDED5440043EF3A /* RecentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA0C1DDED5440043EF3A /* RecentChatViewController.swift */; };
 		5EB8CA101DDED5710043EF3A /* MyChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8CA0F1DDED5710043EF3A /* MyChatViewController.swift */; };
@@ -68,6 +73,11 @@
 		5E1A28E91DDC618800353E25 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		5E1A28EB1DDC647200353E25 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		5E1A28EF1DDC848A00353E25 /* PDExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDExtention.swift; sourceTree = "<group>"; };
+		5E505A191E0014280004B7C6 /* PDKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDKeyboard.xib; sourceTree = "<group>"; };
+		5E505A1A1E0014280004B7C6 /* PDKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDKeyboard.swift; sourceTree = "<group>"; };
+		5E505A1B1E0014280004B7C6 /* PDHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDHorizontalFlowLayout.swift; sourceTree = "<group>"; };
+		5E505A1F1E00142C0004B7C6 /* Sticker.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sticker.xcassets; sourceTree = "<group>"; };
+		5E505A211E001F6C0004B7C6 /* StickerPhotoMediaItem .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StickerPhotoMediaItem .swift"; sourceTree = "<group>"; };
 		5EB8CA0B1DDED5440043EF3A /* RecentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		5EB8CA0C1DDED5440043EF3A /* RecentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewController.swift; sourceTree = "<group>"; };
 		5EB8CA0F1DDED5710043EF3A /* MyChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChatViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +149,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E505A181E00141F0004B7C6 /* STICKER */ = {
+			isa = PBXGroup;
+			children = (
+				5E505A1F1E00142C0004B7C6 /* Sticker.xcassets */,
+				5E505A191E0014280004B7C6 /* PDKeyboard.xib */,
+				5E505A1A1E0014280004B7C6 /* PDKeyboard.swift */,
+				5E505A1B1E0014280004B7C6 /* PDHorizontalFlowLayout.swift */,
+				5E505A211E001F6C0004B7C6 /* StickerPhotoMediaItem .swift */,
+			);
+			name = STICKER;
+			sourceTree = "<group>";
+		};
+		5E505A231E0030100004B7C6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */,
+				DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		5EB8CA111DDED5820043EF3A /* Recent Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +238,7 @@
 		DA11CB3F1DC1C92E000C03E1 /* Chat App Upwork */ = {
 			isa = PBXGroup;
 			children = (
+				5E505A181E00141F0004B7C6 /* STICKER */,
 				DA11CB401DC1C92E000C03E1 /* AppDelegate.swift */,
 				DA11CB421DC1C92E000C03E1 /* ViewController.swift */,
 				DA11CB731DC1CBF4000C03E1 /* LoginViewController.swift */,
@@ -216,6 +248,7 @@
 				5EB8CA111DDED5820043EF3A /* Recent Chat */,
 				5EC0F8331DDDC3220047B318 /* Contacts */,
 				DA7335681DDBA35C003FC7C8 /* Messaging & Friends */,
+				5E505A231E0030100004B7C6 /* Other */,
 				DA11CB791DC1D2B1000C03E1 /* Helper Files */,
 				DA11CB4A1DC1C92E000C03E1 /* Assets.xcassets */,
 				DA11CB441DC1C92E000C03E1 /* Main.storyboard */,
@@ -274,8 +307,6 @@
 				DA7335691DDBA369003FC7C8 /* FriendReqTableViewCell.swift */,
 				DA73356A1DDBA369003FC7C8 /* FriendRequestViewController.swift */,
 				DA73356B1DDBA369003FC7C8 /* UserTableViewCell.swift */,
-				DA73356D1DDBA369003FC7C8 /* PrivateChatViewController.swift */,
-				DA7335701DDBA369003FC7C8 /* CityChatViewController.swift */,
 			);
 			name = "Messaging & Friends";
 			sourceTree = "<group>";
@@ -390,7 +421,9 @@
 				DA11CB4E1DC1C92E000C03E1 /* LaunchScreen.storyboard in Resources */,
 				DA11CB721DC1CB5B000C03E1 /* GoogleService-Info.plist in Resources */,
 				DA11CB4B1DC1C92E000C03E1 /* Assets.xcassets in Resources */,
+				5E505A201E00142C0004B7C6 /* Sticker.xcassets in Resources */,
 				DA11CB461DC1C92E000C03E1 /* Main.storyboard in Resources */,
+				5E505A1C1E0014280004B7C6 /* PDKeyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +507,7 @@
 				DA11CB431DC1C92E000C03E1 /* ViewController.swift in Sources */,
 				DA11CB781DC1D088000C03E1 /* MainViewController.swift in Sources */,
 				5EC0F83A1DDDC38E0047B318 /* ContactsTableViewCell.swift in Sources */,
+				5E505A1E1E0014280004B7C6 /* PDHorizontalFlowLayout.swift in Sources */,
 				DA92C1111DC422DF00259E53 /* GroupViewController.swift in Sources */,
 				5E1A28EA1DDC618800353E25 /* SearchResultsController.swift in Sources */,
 				DA11CB491DC1C92E000C03E1 /* Chat_App_Upwork.xcdatamodeld in Sources */,
@@ -483,9 +517,11 @@
 				5EB8CA0E1DDED5440043EF3A /* RecentChatViewController.swift in Sources */,
 				DA11CB821DC1D378000C03E1 /* Helper.swift in Sources */,
 				DA11CB411DC1C92E000C03E1 /* AppDelegate.swift in Sources */,
+				5E505A1D1E0014280004B7C6 /* PDKeyboard.swift in Sources */,
 				DA7335791DDBA369003FC7C8 /* CityChatViewController.swift in Sources */,
 				5EB8CA101DDED5710043EF3A /* MyChatViewController.swift in Sources */,
 				5E1A28EC1DDC647200353E25 /* FriendTableViewCell.swift in Sources */,
+				5E505A221E001F6C0004B7C6 /* StickerPhotoMediaItem .swift in Sources */,
 				5EC0F83B1DDDC38E0047B318 /* FriendRequestTableViewCell.swift in Sources */,
 				DA11CB801DC1D334000C03E1 /* CommonUtils.swift in Sources */,
 				DA11CB7C1DC1D2CF000C03E1 /* MBProgressHUD.m in Sources */,

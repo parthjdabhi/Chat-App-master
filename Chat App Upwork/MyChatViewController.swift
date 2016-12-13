@@ -11,7 +11,7 @@ import JSQMessagesViewController
 import Alamofire
 
 
-class MyChatViewController: JSQMessagesViewController {
+class MyChatViewController: JSQMessagesViewController, KeyboardDelegate {
     
     // MARK: Properties
     var userIsTypingRef: FIRDatabaseReference!
@@ -22,6 +22,7 @@ class MyChatViewController: JSQMessagesViewController {
     var typingCounter: Int = 0
     var firebase1: FIRDatabaseReference?
     var firebase2: FIRDatabaseReference?
+    
     var loaded: Int = 0
     var loads: [AnyObject] = []
     var loadIds: [AnyObject] = []
@@ -47,7 +48,7 @@ class MyChatViewController: JSQMessagesViewController {
 //        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
 //        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         
-        //self.inputAccessoryView
+        
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
         self.showTypingIndicator = false;
@@ -100,7 +101,7 @@ class MyChatViewController: JSQMessagesViewController {
         bubbleImageIncoming = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
         
         self.topContentAdditionalInset = 44
-        self.inputToolbar.contentView.leftBarButtonItem = nil
+        self.inputToolbar.contentView.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
         self.showLoadEarlierMessagesHeader = false
         
         JSQMessagesCollectionViewCell.registerMenuAction(#selector(MyChatViewController.spam(_:)))
@@ -132,6 +133,63 @@ class MyChatViewController: JSQMessagesViewController {
     @IBAction func ActionGoBack(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    // method for keyboard delegate protocol
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+        self.inputToolbar.contentView.textView.inputView =  nil
+    }
+    
+    func keyWasTapped(data: String) {
+        print("Tapped : \(data)")
+        
+        messageSend(data, type: MESSAGE_STICKER)
+        
+//        let itemRef = messageRef.childByAutoId()
+//        let messageItem = [
+//            "type": MESSAGE_STICKER,
+//            "text": data,
+//            "senderId": senderId,
+//            "senderName": AppState.sharedInstance.displayName ?? "",
+//            "createdAt": NSDate().customFormatted
+//        ]
+//        itemRef.setValue(messageItem)
+        
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        
+        finishSendingMessage()
+        //isTyping = false
+        
+        
+        dismissKeyboard()
+    }
+    
+    override func didPressAccessoryButton(sender: UIButton!) {
+        print("didPressAccessoryButton inputView height : \(self.inputToolbar.contentView.textView.inputView?.frame.height)")
+        
+        if let height = self.inputToolbar.contentView.textView.inputView?.frame.height
+            where height == 216
+        {
+            self.inputToolbar.contentView.textView.endEditing(true)
+            return
+        }
+        
+        // initialize custom keyboard
+        let keyboardView = PDKeyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 216))
+        keyboardView.delegate = self // the view controller will be notified by the keyboard whenever a key is tapped
+        
+        // replace system keyboard with custom keyboard
+        self.inputToolbar.contentView.textView.inputView = keyboardView
+        
+        if self.inputToolbar.contentView.textView.isFirstResponder() {
+            //self.inputToolbar.contentView.textView.endEditing(true)
+            self.inputToolbar.contentView.textView.reloadInputViews()
+        } else {
+            self.inputToolbar.contentView.textView.becomeFirstResponder()
+        }
+    }
+    
     
     func handleTap(sender: UITapGestureRecognizer) {
         print("called swipe")
@@ -374,7 +432,7 @@ class MyChatViewController: JSQMessagesViewController {
     
     // MARK: - Message sendig methods
     
-    func messageSend(text: String)
+    func messageSend(text: String, type: String)
     {
         var message: [String:AnyObject] =  Dictionary()
         message[FMESSAGE_GROUPID] = groupId;
@@ -382,7 +440,7 @@ class MyChatViewController: JSQMessagesViewController {
         message[FMESSAGE_USER_NAME] = senderDisplayName;
         message[FMESSAGE_STATUS] = TEXT_DELIVERED;
         message[FMESSAGE_TEXT] = text;
-        message[FMESSAGE_TYPE] = MESSAGE_TEXT;
+        message[FMESSAGE_TYPE] = type;
         message[FMESSAGE_CREATEDAT] = NSDate().customFormatted
         
         //Add Jsq Message
@@ -409,7 +467,7 @@ class MyChatViewController: JSQMessagesViewController {
             let token = userInfo["deviceToken"] as? String ?? ""
             
             if token.characters.count > 1 {
-                Alamofire.request(.GET, "http://www.unitedpeoplespower.com/api/notifications.php", parameters: ["token": token,"message":"You have a new message!","type":"newMessage","data":"newMessage"])
+                Alamofire.request(.GET, "http://barelabor.com/ChatApp/api/notifications.php", parameters: ["token": token,"message":(type == MESSAGE_STICKER) ? "You have a new sticker message!" : "You have a new message!","type":"newMessage","data":"newMessage"])
                     .responseJSON { response in
                         switch response.result {
                         case .Success:
@@ -453,12 +511,12 @@ class MyChatViewController: JSQMessagesViewController {
         let message = messages[indexPath.item]
         
         if (message["userId"] as? String ?? "") == senderId {
-            cell.textView!.textColor = UIColor.whiteColor()
+            cell.textView?.textColor = UIColor.whiteColor()
             if let image = AppState.sharedInstance.currentUserImage {
                 cell.avatarImageView.image = JSQMessagesAvatarImageFactory.circularAvatarImage(image, withDiameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
             }
         } else {
-            cell.textView!.textColor = UIColor.blackColor()
+            cell.textView?.textColor = UIColor.blackColor()
             FIRDatabase.database().reference().child("users").child(message["userId"] as? String ?? "").child("profileData").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 AppState.sharedInstance.currentUser = snapshot
                 if let base64String = snapshot.value?["userPhoto"] as? String {
@@ -508,8 +566,18 @@ class MyChatViewController: JSQMessagesViewController {
                     let date = (dic[FMESSAGE_CREATEDAT] as? String ?? "").asDate
                     let text = dic[FMESSAGE_TEXT] as? String ?? ""
                     
-                    let jsqMsg = JSQMessage.init(senderId: userId, senderDisplayName: name, date: date, text: text)
-                    self.jsqmessages.append(jsqMsg)
+                    if let type = snapshot.value!["type"] as? String
+                        where type == MESSAGE_STICKER
+                    {
+                        let photoItem:JSQPhotoMediaItem = StickerPhotoMediaItem(image: UIImage(named: text))
+                        let message = JSQMessage(senderId: userId, displayName: name, media: photoItem)
+                        message.key = snapshot.key
+                        self.jsqmessages.append(message)
+                    } else {
+                        let jsqMsg = JSQMessage(senderId: userId, senderDisplayName: name, date: date, text: text)
+                        jsqMsg.key = snapshot.key
+                        self.jsqmessages.append(jsqMsg)
+                    }
                     
                     self.collectionView?.reloadData()
                     JSQSystemSoundPlayer.jsq_playMessageReceivedSound()
@@ -556,7 +624,7 @@ class MyChatViewController: JSQMessagesViewController {
     // MARK: - JSQMessagesViewController method overrides
     
     override func didPressSendButton(button: UIButton, withMessageText text: String, senderId: String, senderDisplayName name: String, date: NSDate) {
-        self.messageSend(text)
+        self.messageSend(text,type: MESSAGE_TEXT)
     }
     
 }
