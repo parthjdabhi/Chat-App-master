@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LNRSimpleNotifications.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Chat App Upwork.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>087DC8B51CF4F0D5D7607F7F841A0EE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>1ED4DFAAD25E1999D0244868457A351E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2975B99FEB9C0E4F5E04302E04BFADE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,11 +82,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3892715DA83E6DD3D239983D1E4E3CB1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>59CDDB315DD2B098E0CD9ED56B026F4B</key>
 		<dict>
 			<key>primary</key>
@@ -92,7 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCD947CEA2177F9B296C4BC941B5E191</key>
+		<key>A9FEB95281E5266517EAB568D7C1D65D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD5EDD9CC4350F18829A3C854B30E416</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D19C87716BB8D46AE956BD694F8AC83D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

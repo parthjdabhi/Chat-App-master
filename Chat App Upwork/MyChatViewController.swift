@@ -467,7 +467,7 @@ class MyChatViewController: JSQMessagesViewController, KeyboardDelegate {
             let token = userInfo["deviceToken"] as? String ?? ""
             
             if token.characters.count > 1 {
-                Alamofire.request(.GET, "http://barelabor.com/ChatApp/api/notifications.php", parameters: ["token": token,"message":(type == MESSAGE_STICKER) ? "You have a new sticker message!" : "You have a new message!","type":"newMessage","data":"newMessage"])
+                Alamofire.request(.GET, "http://khayoyan.com/ChatApp/api/notifications.php", parameters: ["token": token,"message":(type == MESSAGE_STICKER) ? "You have a new sticker message!" : "You have a new message!","type":"newMessage","data":"newMessage"])
                     .responseJSON { response in
                         switch response.result {
                         case .Success:

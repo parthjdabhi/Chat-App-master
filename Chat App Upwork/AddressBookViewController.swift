@@ -42,7 +42,6 @@ class AddressBookViewController: UIViewController,UITableViewDataSource, UITable
                     uRef.observeSingleEventOfType(FIRDataEventType.Value, withBlock: { snapshot in
                         if snapshot.exists()
                         {
-                            
                             let userFirstName:String = snapshot.value!["username"] as? String ?? ""
                             //let userLastName:String = snap.value!["userLastName"] as? String ?? ""
                             var noImage = false
@@ -55,7 +54,6 @@ class AddressBookViewController: UIViewController,UITableViewDataSource, UITable
                             
                             self.photoURL = ""
                             self.userName = userFirstName //+ " " + userLastName
-                            
                             
                             if let email = snapshot.value!["email"] as? String {
                                 self.userArry.append(UserData(userName: self.userName, photoURL: self.photoURL, uid: snapshot.key, image: image, email: email, noImage: noImage))

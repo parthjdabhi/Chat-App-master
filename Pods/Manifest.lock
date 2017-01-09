@@ -67,6 +67,7 @@ PODS:
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - LNRSimpleNotifications (0.4.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -84,8 +85,19 @@ DEPENDENCIES:
   - IQDropDownTextField (~> 1.0)
   - IQKeyboardManagerSwift (= 4.0.5)
   - JSQMessagesViewController
+  - LNRSimpleNotifications (from `https://github.com/LISNR/LNRSimpleNotifications.git`, branch `swift2.3`)
   - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 2.0)
+
+EXTERNAL SOURCES:
+  LNRSimpleNotifications:
+    :branch: swift2.3
+    :git: https://github.com/LISNR/LNRSimpleNotifications.git
+
+CHECKOUT OPTIONS:
+  LNRSimpleNotifications:
+    :commit: a0aeefb770a94b03470a6487ea55399300ade8e1
+    :git: https://github.com/LISNR/LNRSimpleNotifications.git
 
 SPEC CHECKSUMS:
   Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
@@ -108,9 +120,10 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 41fd3a45a2cdb2a0e031af697708a95b865068a1
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  LNRSimpleNotifications: 39eb975feb035884e4b3c1b116e75a3933f52b2d
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 44b79740971800f7d353f39528ab7b8245f6b253
+PODFILE CHECKSUM: 1a6bd81858fd7f4628540708333ca41632c8f7ff
 
 COCOAPODS: 1.0.1

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import LNRSimpleNotifications
 
 class CommonUtils: NSObject {
     static let sharedUtils = CommonUtils()
@@ -40,3 +41,7 @@ class CommonUtils: NSObject {
         return image!
     }
 }
+
+
+
+let notificationManager = LNRNotificationManager()

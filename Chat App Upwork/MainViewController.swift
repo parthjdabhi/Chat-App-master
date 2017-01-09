@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import LNRSimpleNotifications
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -187,6 +188,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if snapshot.exists() {
                 if var dic = snapshot.valueInExportFormat() as? [String:AnyObject] {
                     
+                    notificationManager.showNotification("Group: \(dic["groupName"] as? String ?? "Group Name")", body: "You have ben added to new groups!", onTap: { () -> Void in
+                        print("New Group : Notification Tapped")
+                    })
+                    
                     if let members = dic["members"] as? Dictionary<String,AnyObject>
                         where members.indexForKey(myUserID ?? "") != nil
                     {
@@ -364,6 +369,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        if cell == nil {
 //            cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "cellIdentifier")
 //        }
+        if myGroups.count >= indexPath.row {
+            cell?.textLabel?.text = ""
+            cell?.detailTextLabel?.text = ""
+            return cell!
+        }
         
         cell?.textLabel?.text = myGroups[indexPath.row]["groupName"] as? String ?? "-"
         cell?.detailTextLabel?.text = "\((myGroups[indexPath.row]["members"] as? NSDictionary)?.count ?? 0) Friends"

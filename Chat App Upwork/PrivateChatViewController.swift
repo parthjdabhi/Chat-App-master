@@ -491,7 +491,7 @@ class PrivateChatViewController: JSQMessagesViewController {
             
             if token.characters.count > 1 {
                 
-                Alamofire.request(.GET, "http://barelabor.com/ChatApp/api/notifications.php", parameters: ["token": token,"message":"You have a new message!","type":"newMessage","data":"newMessage"])
+                Alamofire.request(.GET, "http://khayoyan.com/ChatApp/api/notifications.php", parameters: ["token": token,"message":"You have a new message!","type":"newMessage","data":"newMessage"])
                     .responseJSON { response in
                         switch response.result {
                         case .Success:

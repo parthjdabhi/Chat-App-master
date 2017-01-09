@@ -26,5 +26,6 @@ pod 'CryptoSwift', '0.5.2'     # For MD5 Hash String (use when creates new perso
 pod 'Alamofire', '~> 3.4'
 pod 'SDWebImage', '~>3.8'
 pod 'SVProgressHUD', '~> 2.0'
+pod 'LNRSimpleNotifications', :git => 'https://github.com/LISNR/LNRSimpleNotifications.git', :branch => 'swift2.3'
 
 end

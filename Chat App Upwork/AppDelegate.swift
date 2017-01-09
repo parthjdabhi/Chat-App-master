@@ -100,18 +100,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationIconBadgeNumber = 0
         
-        //        if (application.applicationState == .Active)
-        //        {
-        //            // Nothing to do if applicationState is Inactive, the iOS already displayed an alert view.
-        //            var temp : NSDictionary = userInfo
-        //            if let info = userInfo["aps"] as? Dictionary<String, AnyObject>
-        //            {
-        //                var alertMsg = info["alert"] as? String ?? "Notification"
-        //                var alert: UIAlertView!
-        //                alert = UIAlertView(title: "", message: alertMsg, delegate: nil, cancelButtonTitle: "OK")
-        //                alert.show()
-        //            }
-        //        }
+        if (application.applicationState == .Active)
+        {
+            // Nothing to do if applicationState is Inactive, the iOS already displayed an alert view.
+            var temp : NSDictionary = userInfo
+            if let info = userInfo["aps"] as? Dictionary<String, AnyObject>
+            {
+                //"\(userInfo["aps"] as? Dictionary<String, AnyObject>)" ??
+                let alertMsg = info["alert"] as? String ?? "Notification"
+                var alert: UIAlertView!
+                alert = UIAlertView(title: "Notification", message: alertMsg, delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+            }
+        }
     }
 
     // MARK: - Core Data stack

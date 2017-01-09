@@ -41,12 +41,15 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 var contained = false
                 
+                print("User : \(snap.valueInExportFormat())")
+                
                 if let friendRequests = snap.value!["friendRequests"] as? [String: String]
                 {
                     for (_,value) in friendRequests {
                         if value == userID {
                             contained = true
                             print("friend requested")
+                            continue
                         }
                     }
                 }
@@ -57,10 +60,10 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
                         if value == userID {
                             contained = true
                             print("already friends")
+                            continue
                         }
                     }
                 }
-                
                 
                 if userID != snap.key
                     && contained == false
@@ -146,8 +149,9 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
         var records = 0
         if self.searchActive {
             records = filtered.count
+        } else {
+            records = userArry.count
         }
-        records = userArry.count
         
         if records == 0 {
             let emptyLabel = UILabel(frame: tableView.frame)
@@ -179,7 +183,7 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
                     cell.profilePic.sd_setImageWithURL(NSURL(string: self.filtered[indexPath.row].getUserPhotoURL()), placeholderImage: UIImage(named: "no-pic.png"))
                 }
             }
-        }else {
+        } else {
             cell.userNameLabel.text = userArry[indexPath.row].getUserName()
             
             let imageExist = userArry[indexPath.row].imageExist()
@@ -209,7 +213,6 @@ class AddContactsViewController: UIViewController, UITableViewDataSource, UITabl
             let userID = FIRAuth.auth()?.currentUser?.uid
             friendRequestRef.setValue(userID)
             
-
             
             ref.child("users").child(uid).child("userInfo").observeSingleEventOfType(.Value, withBlock: {(snapshot: FIRDataSnapshot) -> Void in
                 

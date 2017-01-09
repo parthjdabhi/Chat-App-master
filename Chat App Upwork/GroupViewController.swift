@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SearchVCDelegates {
     
@@ -34,6 +35,10 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         loadUsers()
     }
     
+    override func  preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,8 +48,12 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if groupField.text?.characters.count == 0 {
             // Need group name
+            SVProgressHUD.showInfoWithStatus("Please use proper group name!")
+            return
         } else if selectedUser.count == 0 {
             // No Participants
+            SVProgressHUD.showInfoWithStatus("Please add atleast one group member!")
+            return
         }
         
         ref = FIRDatabase.database().reference()
@@ -115,6 +124,12 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
             })
         })
+    }
+    
+    // MARK:
+    // Go Back to Previous screen
+    @IBAction func ActionGoBack(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: UISearchBar
